@@ -1,0 +1,30 @@
+<nav ng-controller="navCtrl" class="nav" ng-show="isNavOpen" ng-click="closeNav()">
+
+
+
+  <table>
+    <tr>
+      <td>
+        <div class="nav-content">
+          <ul class="nav-ul">
+            <li class="nav-li" ng-click="closeNav()" ng-class="{'active': isActive('/')}"><a href="/"><p>home</p></a></li>
+            <li class="nav-li" ng-click="closeNav()" ><a href="http://shop.staplepigeon.com/" target="_blank"><p>shop</p></a></li>
+            <li class="nav-li" ng-click="closeNav()" ng-class="{'active': isActive('/collection')}"><a href="/collection"><p>collections</p></a></li>
+            <li class="nav-li" ng-click="closeNav()" ng-class="{'active': isActive('/about')}"><a href="/about"><p>about</p></a></li>
+            <li class="nav-li" ng-click="closeNav()" ng-class="{'active': isActive('/social')}"><a href="/social"><p>social</p></a></li>
+            <li class="nav-li" ng-click="closeNav()" ng-class="{'active': isActive('/stockists')}"><a href="/stockists"><p>stockists</p></a></li>
+            <li class="nav-li" ng-click="closeNav()" ng-class="{'active': isActive('/contact')}"><a href="/contact"><p>contact</p></a></li>
+            <li class="nav-li" ng-click="closeNav()" ng-class="{'active': isActive('/committee')}"><a href="/committee"><p>committee</p></a></li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+  <div class="nav-subscribe" ng-click="closeNav()"><a href="/subscribe"><p>subscribe</p></a></div>
+
+
+  <div class="nav-subscribe" ng-click="closeNav()"><a href="/legal"><p>legal</p></a></div>
+
+</nav>

@@ -1,0 +1,31 @@
+<div class="collection" ng-controller="collectionCtrl">
+
+
+  <div class="collection-list">
+    <div class="collection-season" ng-repeat="c in Collection" id="collection-{{c.uid}}">
+      <table>
+        <tr>
+          <td>
+            <div class="collection-season-entry"  ng-repeat="s in c.data['collection.look'].value">
+              <div class="collection-season-entry-image" style="background-image: url('{{s.image.value.main.url}}')"></div>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+
+
+<div class="collection-current">
+  <div class="collection-current-season">
+    <p>{{mainCollection.data['collection.title'].value}}</p>
+  </div>
+  
+  <a ng-click="nextCollection()">next</a>
+  <a ng-click="previousCollection()">previous</a>
+
+</div>
+
+
+</div>

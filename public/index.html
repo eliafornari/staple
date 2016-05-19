@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js" > <!--<![endif]-->
+
+
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <title>STAPLE PIGEON</title>
+  <meta name="google-site-verification" content="">
+  <meta name="msapplication-TileColor" content="#ff481b">
+  <meta name="msapplication-TileImage" content="http://staplepigeon.com/public/assets/images/staple.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@">
+  <meta name="twitter:site" content="@staplepigeon">
+  <meta name="twitter:title" content="STAPLE PIGEON | Official Site of Staple Pigeon inc.">
+  <meta name="twitter:description" content="The official site of Staple Pigeon inc.">
+  <meta name="twitter:image" content="http://staplepigeon.com/public/assets/images/staple.png">
+  <meta name="description" content="The official site of Staple Pigeon inc.">
+  <meta name="robots" content="noodp">
+  <meta name="keywords" content="staple pigeon, jeff staple, reed space, staple design, sneakers, streetwear">
+  <link rel="canonical" href="http://staplepigeon.com/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="STAPLE PIGEON | Official Site of Staple Pigeon inc.">
+  <meta property="og:description" content="The official site of Staple Pigeon inc.">
+  <meta property="og:url" content="http://staplepigeon.com/">
+  <meta property="og:site_name" content="STAPLE PIGEON">
+  <meta name=“author” title=“Elia Fornari, Dan Bell | Qual Agency”>
+  <link rel=”author” href=”https://plus.google.com/u/1/+eliafornarichannel”/>
+  <link rel="icon" type="image/x-icon" href="assets/favicon/stpl.ico" >
+  <base href="/">
+
+<!--
+=======================================================================
+
+    Chapter | 2016
+
+    Designed and developed by Elia Fornari, Dan Bell | Qual Agency
+
+=======================================================================
+
+-->
+
+
+
+</head>
+
+
+
+<body ng-controller="routeController">
+
+  <nav-directive></nav-directive>
+
+  <header ng-controller="navCtrl" class="header" ng-click="openNav()" ng-class="{'navOpen': isNavOpen}">
+    <div class="header-wrapper">
+      <div class="nav-close" ng-show="isNavOpen"><a><ex-directive></ex-directive></a></div>
+
+      <div class="logo-wrapper" ng-hide="isNavOpen">
+        <!-- <logo-directive></logo-directive> -->
+      </div>
+    </div>
+  </header>
+
+
+
+
+<div class="shop">
+  <div class="shop-button">
+
+  </div>
+  <a href="http://shop.staplepigeon.com/" target="_blank">
+    shop
+  </a>
+
+</div>
+
+
+
+  <div ng-show="pageLoading" class="page-loader-div">
+    <div class="loading-logo">
+      <logo-black-directive></logo-black-directive>
+    </div>
+  </div>
+
+
+
+
+  <!-- .................................. Main ...............................-->
+
+  <main ng-view class='main' autoscroll="true">
+  </main>
+
+
+
+
+</body>
+
+<link rel="stylesheet" type="text/css" href="/stylesheet/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/stylesheet/app.css">
+<script type="text/javascript" src="/node_modules/prismic.io/dist/prismic.io.js"></script>
+<script type="text/javascript" src="http://www.bandsintown.com/javascripts/bit_widget.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-loader.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-touch.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-sanitize.js"></script>
+<script src="https://code.angularjs.org/1.5.5/angular-sanitize.min.js"></script>
+
+
+
+  <script type="text/javascript" src="js/concat.js"></script>
+
+</html>

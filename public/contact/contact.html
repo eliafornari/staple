@@ -1,0 +1,77 @@
+<div class="contact" ng-controller="contactCtrl" summary="this is the content of contact">
+    <table>
+      <tr>
+        <td>
+            <div class="contact-content">
+
+                                              <!-- SHOW ERROR/SUCCESS MESSAGES -->
+                                                <div id="messages" ng-show="message">{{ message }}</div>
+
+
+
+                                                <!-- errors -->
+                                                  <div class="alert alert-danger" ng-show="error">
+                                                  <button class="close" data-dismiss="alert">x</button>
+
+                                                  </div>
+
+                                                  <div class="alert-success" ng-show="success">
+
+                                                     We received your message. Thank you for your interest.
+                                                    <p class="back-button"><a href="/contact" ng-click="contactMobileOutsideBackLink()">back</a></p>
+                                                  </div>
+
+              <!-- form -->
+              <form class="contact-form" role="form" name="contactForm" ng-submit="processForm()" novalidate ng-hide="hideContact">
+
+
+                <div class="form-name form-entry">
+                  <input class="form-name-input input" type="text" name="name"  ng-model="formData.name" ng-maxlength="50" required="required" placeholder="NAME" onfocus="this.placeholder = ''" onblur="this.placeholder = 'NAME'">
+                </div>
+
+
+                <div class="form-email form-entry">
+                  <input class="form-email-input input" type="email" name="email" ng-model="formData.email" ng-maxlength="30" required="required" placeholder="EMAIL" onfocus="this.placeholder = ''" onblur="this.placeholder = 'EMAIL'">
+                </div>
+
+
+                <div class="form-message form-entry">
+                  <textarea class="form-message-input input" rows="5" name="message" ng-maxlength="50" ng-model="formData.body" placeholder="MESSAGE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'MESSAGE'" ></textarea>
+                </div>
+
+                <button class="form-button" type="submit"   ng-class="{'contactDisabled': contactForm.$invalid}" ng-click="processForm()" ng-disabled="contactForm.$invalid">SUBMIT</button>
+            </form>
+          </div>
+
+
+      </td>
+    </tr>
+  </table>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<!-- <div class="form-dropdown">
+  <select class="form-dropdown-select input" name="subject" ng-model="formData.subject">
+    <div class="form-dropdown-select-placeholder">
+      <option value="" disabled selected>SUBJECT</option>
+    </div>
+    <option>GENERAL</option>
+    <option>COLLECTIONS</option>
+    <option>PRESS</option>
+    <option>COMMITTEE</option>
+    <option>JOBS</option>
+  </select>
+
+  <div class="contact-select-arrow">
+    <b></b>
+  </div>
+</div> -->
