@@ -379,7 +379,9 @@ textarea {
   color: #000000; }
 
 .collection {
-  width: 100vw; }
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden; }
 
 .collection-list {
   width: 100vw;
@@ -413,7 +415,13 @@ textarea {
     line-height: 70px;
     font-family: helvetica;
     font-weight: bold;
-    letter-spacing: 5px; }
+    letter-spacing: 5px;
+    text-align: center; }
+
+.collection-arrows {
+  position: fixed;
+  right: 20px;
+  bottom: 20px; }
 
 .committee {
   height: 100vh;

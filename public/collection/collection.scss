@@ -1,5 +1,8 @@
 .collection{
   width:100vw;
+  // height:500vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
 
 }
 
@@ -40,8 +43,15 @@
   .collection-current-season{
     p{
       @include title();
+      text-align: center;
     }
-
-
   }
+}
+
+
+
+.collection-arrows{
+  position: fixed;
+  right: $margin-sides;
+  bottom: $margin-sides;
 }

@@ -98,26 +98,4 @@ app.get('*', routes.index);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app.listen(7000);

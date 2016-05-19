@@ -44,17 +44,17 @@ module.exports = function (grunt) {
                     'bower_components/angular/angular.min.js',
                      'bower_components/modernizer/modernizr.js',
 
-                     'bower_components/jquery/jquery.js',
-                     'bower_components/angular-touch/angular-touch.min.js',
-                     'bower_components/angular-sanitize/angular-sanitize.min.js',
-                     'bower_components/angular-route/angular-route.min.js',
-                     'bower_components/angular-resource/angular-resource.min.js',
-                     'bower_components/angular-animate/angular-animate.min.js',
-                     'bower_components/angular-touch/angular-touch.js',
-                     'bower_components/video.js/dist/video-js/video.dev.js',
-                     'bower_components/soundcloud.min.js',
-                     'components/eliasInstagramModule.js',
-                     'bower_components/angular-mailchimp.js',
+                    //  'bower_components/jquery/jquery.js',
+                    //  'bower_components/angular-touch/angular-touch.min.js',
+                    //  'bower_components/angular-sanitize/angular-sanitize.min.js',
+                    //  'bower_components/angular-route/angular-route.min.js',
+                    //  'bower_components/angular-resource/angular-resource.min.js',
+                    //  'bower_components/angular-animate/angular-animate.min.js',
+                    //  'bower_components/angular-touch/angular-touch.js',
+                    //  'bower_components/video.js/dist/video-js/video.dev.js',
+                    //  'bower_components/soundcloud.min.js',
+                    //  'components/eliasInstagramModule.js',
+                    //  'bower_components/angular-mailchimp.js',
 
 
 

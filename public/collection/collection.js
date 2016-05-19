@@ -103,45 +103,60 @@ windowheight = window.innerHeight;
 setTimeout(function(){
 
 
-$scope.collectionPositions=[];
+// $scope.collectionPositions=[];
+//
+//   for (i in $rootScope.Collection){
+//     var artistPosition =  jQuery('#collection-'+$rootScope.Collection[i].uid).offset().top;
+//     artistPosition = windowheight*i;
+//     var object = {
+//                     "index": i,
+//                     "name": $rootScope.Collection[i].uid,
+//                     "offset":artistPosition
+//                   }
+//
+//     $scope.collectionPositions = $scope.collectionPositions.concat(object);
+//   }
 
-  for (i in $rootScope.Collection){
-    var artistPosition =  jQuery('#collection-'+$rootScope.Collection[i].uid).offset().top;
-    artistPosition = windowheight*i;
-    var object = {
-                    "index": i,
-                    "name": $rootScope.Collection[i].uid,
-                    "offset":artistPosition
-                  }
+$(function() {
 
-    $scope.collectionPositions = $scope.collectionPositions.concat(object);
-  }
+   $(".collection-season").mousewheel(function(event, delta) {
 
+      console.log(event.deltaX, event.deltaY, event.deltaFactor);
 
+      this.scrollLeft -= (delta * 0.4);
 
+      event.preventDefault();
 
-    jQuery(window).bind("scroll.collection", function(event) {
+   });
 
-        scroll = jQuery(window).scrollTop();
-
-
-        for (i in $scope.collectionPositions){
-
-          if((scroll > ($scope.collectionPositions[i].offset - 1)) && (scroll < ($scope.collectionPositions[i].offset + windowheight -1 ))){
-            $rootScope.mainCollection=$rootScope.Collection[i];
-            $scope.mainIndex=i;
-            console.log($scope.mainIndex);
-            console.log($rootScope.mainCollection.uid);
-            $scope.$apply();
+});
 
 
-          }else{
-          }
-       }//for loop
+    // jQuery('.collection').bind("scroll.collection", function(event) {
+    //
+    //     scroll = jQuery('.collection').scrollTop();
 
-        $scope.$apply();
 
-    });//scroll bind
+        // $('.collection-season').scrollLeft(scroll);
+
+
+      //   for (i in $scope.collectionPositions){
+       //
+      //     if((scroll > ($scope.collectionPositions[i].offset - 1)) && (scroll < ($scope.collectionPositions[i].offset + windowheight -1 ))){
+      //       $rootScope.mainCollection=$rootScope.Collection[i];
+      //       $scope.mainIndex=i;
+      //       console.log($scope.mainIndex);
+      //       console.log($rootScope.mainCollection.uid);
+      //       $scope.$apply();
+       //
+       //
+      //     }else{
+      //     }
+      //  }//for loop
+
+    //     $scope.$apply();
+    //
+    // });//scroll bind
 
 
     // $scope.$on('destroy', function(){
