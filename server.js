@@ -49,10 +49,7 @@ app.use("/assets", express.static(__dirname + '/public/assets'));
 app.get('/data', function(req, res) {
 
 
-
-
   // res.json(Data);
-
   var userId = '20694160';
   var instaAccessToken = "20694160.475cd8b.f772e39e2831440782498dd0284da5b7"; //staple access token
   var endpoint = 'https://api.instagram.com/v1/users/'+userId+'/media/recent?access_token='+instaAccessToken;
