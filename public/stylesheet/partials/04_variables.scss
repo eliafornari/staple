@@ -1,0 +1,102 @@
+/*....................................SCSS VARIABLES..................................*/
+
+$z-nav: 4;
+// ........................................................FONT FAMILIES
+$font-one: "minerva-modern";
+$font-two: "nimbus-sans";
+
+
+
+// ........................................................FONT WEIGHTS
+$font-weight-light: 300;
+$font-weight-regular: 400;
+
+
+
+// ........................................................FONT SIZES
+$font-size-nav:35px;
+$font-size-title:35px;
+$font-size-subtitle:20px;
+$font-size-paragraph: 12px;
+
+$font-size-nav-mobile:25px;
+$font-size-title-mobile:30px;
+$font-size-subtitle-mobile:14px;
+$font-size-paragraph-mobile: 12px;
+
+
+$letter-spacing: 1px;
+
+
+
+
+
+$font-family-nav: helvetica;
+$font-family-title: helvetica;
+$font-family-subtitle: helvetica;
+$font-family-paragraph: helvetica;
+
+
+
+// ........................................................FONT LINEHEIGHTS
+$line-height-title: 70px;
+$line-height-subtitle: 30px;
+$line-height-paragraph: 22px;
+
+
+$line-height-title-mobile: 40px;
+$line-height-subtitle-mobile: 24px;
+$line-height-paragraph-mobile: 18px;
+
+// ........................................................TEXT PADDINGS
+$padding-text: 5px;
+$padding-left: 0px;
+$padding-headline-bottom: 20px;
+
+
+
+// ........................................................COLORS
+$black: #000000;
+$white: #FFFFFF;
+$orange: #ff481b;
+$light-grey: #d3d3d3;
+$light-light-grey: rgba(0,0,0, 0.1);
+
+// ........................................................MARGINS
+$margin-sides: 20px;
+$margin-bottom: 35px;
+$margin-top: 100px;
+$margin-top-mobile: 50px;
+$margin-sides-mobile:10px;
+
+
+// ........................................................TRANSITION TIMINGS
+$transition-extreme-slow: 1.4s;
+$transition-slow: .6s;
+$transition-medium: .4s;
+$transition-fast: .2s;
+
+
+
+
+
+
+
+
+// ........................................................Z-INDEXES
+$z-loader: 999;
+$z-header: 13;
+$z-nav: 12;
+$z-collection-current: 10;
+
+
+$z-close:10;
+$z-home: 10;
+
+$z-percentage:7;
+
+$z-main: 6;
+$z-artist: 6;
+
+
+/*....................................................................................*/

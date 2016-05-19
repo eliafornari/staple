@@ -1,0 +1,183 @@
+/*....................................General settings..................................*/
+
+
+
+
+/*.....................TEXT MARK STYLES......................*/
+
+::-moz-selection {
+    background: $orange;
+    color: #FFFFFF;
+    text-shadow: none;
+}
+
+
+::selection {
+    background: $orange;
+    color: #FFFFFF;
+    text-shadow: none;
+}
+
+/*.........................................................*/
+
+
+
+.ng-click-active{
+  color:$orange;
+  stroke: $orange;
+}
+
+
+
+
+
+
+
+
+/*....................HIDING SCROLLBAR.....................*/
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+
+
+*{
+  -webkit-overflow-scrolling: touch;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+html{
+  box-sizing: border-box;
+}
+
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+
+
+/*.....................GENERAL STYLES......................*/
+
+html{
+  font-family: helvetica;
+  width: 100%;
+  height: auto;
+  margin: 0, 0;
+  padding: 0, 0;
+}
+
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0, 0;
+  padding: 0, 0;
+  display: table;
+  text-transform: uppercase;
+  font-family: helvetica;
+  /* Set the background color of the HTML page to black */
+  background-color: #FFFFFF;
+
+}
+
+
+p, a, li {
+  font-size: $font-size-paragraph;
+  list-style-type: none;
+  letter-spacing:$letter-spacing;
+  color: #000000;
+}
+
+
+input, textarea, select, a, li {
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+/*.........................MAIN............................*/
+main {
+  height: auto;
+  position: relative;
+  display: block;
+  list-style-type: none;
+  display: table;
+}
+
+
+
+
+/*.............................NG-CLOAK............................*/
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+
+[ng-click],
+[data-ng-click],
+[x-ng-click] {
+cursor: pointer;
+}
+
+
+
+
+
+/*.............................Loader............................*/
+
+.page-loader-div{
+  display: block;
+  height: 100vh;
+  opacity: 1;
+  display: block;
+  width: 100vw;
+  float: left;
+  padding: 0;
+  margin: 0;
+  display: list-item;
+  background-color: transparent;
+  z-index: $z-loader;
+  background-color: rgba(255,255,255,0.95);
+  position: fixed;
+  .loading-p{
+    position: fixed;
+    width:100vw;
+    height:100vh;
+    // top:50%;
+    // left:50%;
+    // width:100px;
+    // height:50px;
+    // margin-top:-25px;
+    // margin-left:-50px;
+    // line-height: 50px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: $font-size-subtitle;
+    font-family: camptonSemiBold;
+  }
+}
