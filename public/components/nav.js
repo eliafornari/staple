@@ -155,6 +155,18 @@ $rootScope.isNavOpen = false;
 })
 
 
+.directive('arrowDirective', function($rootScope, $location, $window, $routeParams, $timeout) {
+  return {
+    restrict: 'E',
+    templateUrl: 'components/icon/arrow.html',
+    replace: true,
+    link: function(scope, elem, attrs) {
+
+    }
+  };
+})
+
+
 
 
 .directive('navDirective', function($rootScope, $location, $window, $routeParams, $timeout) {

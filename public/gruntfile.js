@@ -9,6 +9,8 @@ module.exports = function (grunt) {
                      'bower_components/soundcloud.min.js',
                      'components/eliasInstagramModule.js',
                      'bower_components/angular-mailchimp.js',
+                     'node_modules/jquery-mousewheel/jquery.mousewheel.js',
+
 
 
                      'js/app.js',
@@ -43,6 +45,8 @@ module.exports = function (grunt) {
                   files: [
                     'bower_components/angular/angular.min.js',
                      'bower_components/modernizer/modernizr.js',
+                     'node_modules/jquery-mousewheel/jquery.mousewheel.js',
+
 
                     //  'bower_components/jquery/jquery.js',
                     //  'bower_components/angular-touch/angular-touch.min.js',

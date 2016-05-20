@@ -21,10 +21,10 @@
     height:auto;
     position: relative;
     .nav-close{
-
+      position: absolute;
     }
     .logo-wrapper{
-      position: relative;
+      position: absolute;
       background-color: #000000;
       @include hover-effect-background-color($black, $orange);
       width: 100%;
@@ -113,4 +113,16 @@
       }
     }
   }
+}
+
+
+
+
+.navOpen.ng-hide-add.ng-add-add-active{
+
+  transition:none;
+  -ms-transition:none;
+  -o-transition:none;
+  -moz-transition:none;
+  -webkit-transition:none;
 }

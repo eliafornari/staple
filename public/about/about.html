@@ -3,4 +3,39 @@
 
 
 
+  <div class="about-list">
+    <div class="about-section" ng-repeat="a in About" id="about-{{a.uid}}">
+      <table>
+        <tr>
+          <td>
+            <div class="about-section-entry"  ng-repeat="f in a.sections">
+              <div class="about-section-entry-image" style="background-image: url('{{f.url}}')" ng-if="f.type == 'image'"></div>
+              <div class="about-section-entry-text" ng-if="f.type == 'text'"><p>{{f.text}}</p></div>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+
+
+<div class="about-current">
+  <div class="about-current-season">
+    <p>{{mainAbout.name}}</p>
+  </div>
+
+
+
+</div>
+
+
+
+
+<div class="about-arrows">
+
+  <a class="about-arrows-up" ng-click="previousAbout()"><arrow-directive></arrow-directive></a>
+  <a class="about-arrows-down" ng-click="previousAbout()"><arrow-directive></arrow-directive></a>
+</div>
+
 </div>

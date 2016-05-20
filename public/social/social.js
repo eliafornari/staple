@@ -20,7 +20,19 @@ Social.controller('socialCtrl', function($scope, $location, $rootScope, $routePa
 
 
 
+    $(function() {
 
+       $(".social-instagram").mousewheel(function(event, delta) {
+
+          console.log(event.deltaX, event.deltaY, event.deltaFactor);
+
+          this.scrollLeft -= (delta * 0.4);
+
+          event.preventDefault();
+
+       });
+
+    });
 
 
 

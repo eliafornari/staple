@@ -264,6 +264,8 @@ $transition-slow: 1s;
   transform: $coordinate;
   -ms-transform: $coordinate; /* IE 9 */
  	-webkit-transform: $coordinate; /* Safari */
+  -o-transform: $coordinate; /* Safari */
+  -moz-transform: $coordinate; /* Safari */
   transform-origin: 0 0;
 }
 

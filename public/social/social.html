@@ -1,15 +1,26 @@
 <div class="social" ng-controller="socialCtrl" summary="this is the content of social">
 
-
-<div class="social-instagram">
-
-  <ul>
-    <li ng-repeat="s in instaTotal track by $index">
-      <img src="{{s.images.standard_resolution.url}}" alt=""/>
-    </li>
-  </ul>
-
-</div>
-
+  <table>
+    <tr>
+      <td>
+          <div class="social-instagram">
+            <ul class="social-instagram-ul">
+              <li class="social-instagram-li" ng-repeat="s in instaTotal track by $index">
+                <table>
+                  <tr>
+                    <td>
+                      <img class="social-instagram-img" src="{{s.images.standard_resolution.url}}" alt="{{s.caption.text}}" ng-if="s.type == 'image'"/>
+                      <video autoplay loop muted poster="{{s.images.standard_resolution.url}}" ng-if="s.type == 'video'">
+                        <source src="{{s.videos.standard_resolution.url}}" type="video/mp4">
+                      </video>
+                    </td>
+                  </tr>
+                </table>
+              </li>
+            </ul>
+          </div>
+      </td>
+    </tr>
+  </table>
 
 </div>

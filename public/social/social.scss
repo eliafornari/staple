@@ -1,0 +1,39 @@
+.social{
+  width:100vw;
+  height:100vh;
+}
+
+
+.social-instagram{
+  width:100vw;
+  height:600px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+
+
+.social-instagram-ul{
+  display: table;
+  width: auto;
+  height:600px;
+  white-space:nowrap;
+  .social-instagram-li{
+    display: inline-block;
+    height: 600px;
+    width: 600px;
+
+    img{
+      width:80%;
+      margin: auto;
+      display: block;
+    }
+
+    video{
+      width:80%;
+      margin: auto;
+      display: block;
+    }
+
+  }
+}

@@ -17,6 +17,7 @@ $scope.mainIndex = 0;
         // if(newValue != oldValue){
         setTimeout(function(){
           $rootScope.mainCollection = $rootScope.Collection[0];
+          $scope.$apply();
         }, 1000);
 
         // }
@@ -29,10 +30,12 @@ $rootScope.nextCollection = function(x) {
 
   if($scope.mainIndex<($rootScope.Collection.length-1)){
       $scope.mainIndex = $scope.mainIndex + 1;
+      $rootScope.mainCollection = $rootScope.Collection[$scope.mainIndex];
       console.log("befo the bound");
   }
   else if($scope.mainIndex>=0){
     $scope.mainIndex = 0;
+    $rootScope.mainCollection = $rootScope.Collection[$scope.mainIndex];
     console.log("over the bound");
   }
   anchorSmoothScroll.scrollTo('collection-'+$rootScope.Collection[$scope.mainIndex].uid);
@@ -55,9 +58,11 @@ $rootScope.nextCollection = function(x) {
 $rootScope.previousCollection = function() {
       if($scope.mainIndex>0){
           $scope.mainIndex = $scope.mainIndex - 1;
+          $rootScope.mainCollection = $rootScope.Collection[$scope.mainIndex];
       }
       else if($scope.mainIndex<=0){
         $scope.mainIndex = $rootScope.Collection.length;
+        $rootScope.mainCollection = $rootScope.Collection[$scope.mainIndex];
       }
 
 

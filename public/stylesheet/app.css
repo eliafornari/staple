@@ -19,8 +19,10 @@
     width: 100%;
     height: auto;
     position: relative; }
+    .header .header-wrapper .nav-close {
+      position: absolute; }
     .header .header-wrapper .logo-wrapper {
-      position: relative;
+      position: absolute;
       background-color: #000000;
       background-color: #000000;
       transition: background-color 0.4s ease;
@@ -166,6 +168,13 @@
           .nav-content .nav-ul .nav-li a p:hover {
             color: #000000 !important; } }
 
+.navOpen.ng-hide-add.ng-add-add-active {
+  transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  -moz-transition: none;
+  -webkit-transition: none; }
+
 /*....................................General settings..................................*/
 /*.....................TEXT MARK STYLES......................*/
 ::-moz-selection {
@@ -232,6 +241,13 @@ main {
   list-style-type: none;
   display: table; }
 
+table {
+  width: 100%;
+  height: 100%; }
+  table tr td {
+    vertical-align: middle;
+    height: 100%; }
+
 /*.............................NG-CLOAK............................*/
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important; }
@@ -246,7 +262,6 @@ main {
   display: block;
   height: 100vh;
   opacity: 1;
-  display: block;
   width: 100vw;
   float: left;
   padding: 0;
@@ -256,14 +271,11 @@ main {
   z-index: 999;
   background-color: rgba(255, 255, 255, 0.95);
   position: fixed; }
-  .page-loader-div .loading-p {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    vertical-align: middle;
-    text-align: center;
-    font-size: 20px;
-    font-family: camptonSemiBold; }
+  .page-loader-div .loading-logo {
+    position: relative;
+    margin: auto;
+    display: block;
+    width: 200px; }
 
 .home {
   height: 100vh;
@@ -282,6 +294,84 @@ table {
   margin: auto; }
   .home-video iframe {
     width: 60vw; }
+
+.about {
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden; }
+
+.about-list {
+  width: 100vw;
+  height: auto; }
+  .about-list .about-section {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap; }
+    .about-list .about-section .about-section-entry {
+      display: inline-block;
+      width: 500px;
+      height: 300px; }
+      .about-list .about-section .about-section-entry .about-section-entry-image {
+        width: 500px;
+        height: 300px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center; }
+      .about-list .about-section .about-section-entry .about-section-entry-text {
+        width: 500px;
+        height: 300px;
+        font-size: 12px;
+        line-height: 22px;
+        font-family: helvetica; }
+
+.about-current {
+  position: fixed;
+  bottom: 20px;
+  width: 500px;
+  left: 50%;
+  margin-left: -250px;
+  z-index: 10; }
+  .about-current .about-current-season p {
+    font-size: 35px;
+    line-height: 70px;
+    font-family: helvetica;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-align: center; }
+
+.about-arrows {
+  position: fixed;
+  right: 20px;
+  bottom: 20px; }
+  .about-arrows .about-arrows-up {
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    /* IE 9 */
+    -webkit-transform: rotate(180deg);
+    /* Safari */
+    -o-transform: rotate(180deg);
+    /* Safari */
+    -moz-transform: rotate(180deg);
+    /* Safari */
+    transform-origin: 0 0;
+    transform-origin: center; }
+    .about-arrows .about-arrows-up svg {
+      width: 100%;
+      height: 100%;
+      display: block; }
+  .about-arrows .about-arrows-down {
+    display: block;
+    width: 50px;
+    height: 50px; }
+    .about-arrows .about-arrows-down svg {
+      width: 100%;
+      height: 100%;
+      display: block; }
 
 .contact {
   width: 100vw;
@@ -422,6 +512,33 @@ textarea {
   position: fixed;
   right: 20px;
   bottom: 20px; }
+  .collection-arrows .collection-arrows-up {
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    /* IE 9 */
+    -webkit-transform: rotate(180deg);
+    /* Safari */
+    -o-transform: rotate(180deg);
+    /* Safari */
+    -moz-transform: rotate(180deg);
+    /* Safari */
+    transform-origin: 0 0;
+    transform-origin: center; }
+    .collection-arrows .collection-arrows-up svg {
+      width: 100%;
+      height: 100%;
+      display: block; }
+  .collection-arrows .collection-arrows-down {
+    display: block;
+    width: 50px;
+    height: 50px; }
+    .collection-arrows .collection-arrows-down svg {
+      width: 100%;
+      height: 100%;
+      display: block; }
 
 .committee {
   height: 100vh;
@@ -472,5 +589,33 @@ textarea {
     background-color: #000000;
     top: 0;
     left: 0; }
+
+.social {
+  width: 100vw;
+  height: 100vh; }
+
+.social-instagram {
+  width: 100vw;
+  height: 600px;
+  overflow-x: scroll;
+  overflow-y: hidden; }
+
+.social-instagram-ul {
+  display: table;
+  width: auto;
+  height: 600px;
+  white-space: nowrap; }
+  .social-instagram-ul .social-instagram-li {
+    display: inline-block;
+    height: 600px;
+    width: 600px; }
+    .social-instagram-ul .social-instagram-li img {
+      width: 80%;
+      margin: auto;
+      display: block; }
+    .social-instagram-ul .social-instagram-li video {
+      width: 80%;
+      margin: auto;
+      display: block; }
 
 /*# sourceMappingURL=app.css.map */
