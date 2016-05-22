@@ -14,16 +14,34 @@
 
 
 
-.form-next{
+.form-navigation{
   position: fixed;
-  width:100px;
-  bottom:150px;
-  left:50%;
-  margin-left: -100px;
-  a{
-    @include title();
+  width:100vw;
+  bottom:15px;
+  left:0%;
+  z-index:$z-committee-buttons;
+  // margin-left: -200px;
+  color: white;
+  mix-blend-mode: difference;
+  .form-navigation-buttons{
+    margin: auto;
+    width:400px;
+    text-align: center;
+    color: white;
+    mix-blend-mode: difference;
+
+    span{
+      @include title();
+      @include hover-effect-color($black, $orange);
+      mix-blend-mode: difference;
+      color: white;
+
+    }
+
   }
 }
+
+
 
 
 

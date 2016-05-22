@@ -105,3 +105,16 @@ $http({
 
 
 });//end od controller
+
+
+
+Committee.directive('committeeSections', function($rootScope, $location, $window, $routeParams, $timeout) {
+  return {
+    restrict: 'E',
+    templateUrl: 'committee/committee-sections.html',
+    replace: true,
+    link: function(scope, elem, attrs) {
+
+    }
+  };
+})

@@ -551,18 +551,54 @@ textarea {
   .committee-content .committee-form {
     width: 600px; }
 
-.form-next {
+.form-navigation {
   position: fixed;
-  width: 100px;
-  bottom: 150px;
-  left: 50%;
-  margin-left: -100px; }
-  .form-next a {
-    font-size: 35px;
-    line-height: 70px;
-    font-family: helvetica;
-    font-weight: bold;
-    letter-spacing: 5px; }
+  width: 100vw;
+  bottom: 15px;
+  left: 0%;
+  z-index: 10;
+  color: white;
+  mix-blend-mode: difference; }
+  .form-navigation .form-navigation-buttons {
+    margin: auto;
+    width: 400px;
+    text-align: center;
+    color: white;
+    mix-blend-mode: difference; }
+    .form-navigation .form-navigation-buttons span {
+      font-size: 35px;
+      line-height: 70px;
+      font-family: helvetica;
+      font-weight: bold;
+      letter-spacing: 5px;
+      color: #000000;
+      transition: color 0.4s ease;
+      -webkit-transition: color 0.4s ease;
+      -moz-transition: color 0.4s ease;
+      -ms-transition: color 0.4s ease;
+      -o-transition: color 0.4s ease;
+      mix-blend-mode: difference;
+      color: white; }
+      .form-navigation .form-navigation-buttons span:hover {
+        color: #ff481b;
+        /*  @if $media == large-desktop {
+            @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+          }*/
+        /*  @if $media == large-desktop {
+            @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+          }*/
+        /*  @if $media == large-desktop {
+            @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+          }*/ }
+        @media only screen and (min-width: 0px) and (max-device-width: 767px) {
+          .form-navigation .form-navigation-buttons span:hover {
+            color: #000000 !important; } }
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: portrait) {
+          .form-navigation .form-navigation-buttons span:hover {
+            color: #000000 !important; } }
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
+          .form-navigation .form-navigation-buttons span:hover {
+            color: #000000 !important; } }
 
 .committee-progress {
   width: 100vw;

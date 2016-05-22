@@ -1,0 +1,208 @@
+
+<div class="committee-sections">
+
+
+  <div class="committee-form-section" ng-show="committeeStatus == 0">
+
+      <div class="form-name form-entry">
+        <input class="form-name-input input" type="text" name="name"  ng-model="committeeForm.name" ng-maxlength="50" required="required" placeholder="NAME" onfocus="this.placeholder = ''" onblur="this.placeholder = 'NAME'">
+      </div>
+
+      <div class="form-lastname form-entry">
+        <input class="form-name-input input" type="text" name="lastname"  ng-model="committeeForm.lastname" ng-maxlength="50" required="required" placeholder="LAST NAME" onfocus="this.placeholder = ''" onblur="this.placeholder = 'LAST NAME'">
+      </div>
+
+      <div class="form-email form-entry">
+        <input class="form-email-input" type="email" name="email" ng-model="committeeForm.email" ng-maxlength="30"  placeholder="EMAIL" onfocus="this.placeholder = ''" onblur="this.placeholder = 'EMAIL'">
+      </div>
+
+      <div class="form-phone form-entry">
+        <input class="form-phone-input" type="number" name="phone" ng-model="committeeForm.phone" ng-minlength="10" ng-maxlength="10"  required="required"  placeholder="PHONE"  ng-required="true"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'PHONE'">
+        <!-- <span class="help-block" ng-show="committeeForm.phone.$error.required || registration.phone.$error.number">Valid phone number is required</span> -->
+        <!-- <span class="help-block" ng-show="((committeeForm.phone.$error.minlength || registration.phone.$error.maxlength) && registration.phone.$dirty) ">phone number should be 10 digits</span> -->
+      </div>
+
+      <div class="form-date form-entry">
+        <input class="form-date-input" type="date" name="dateofbirth" ng-model="committeeForm.dateofbirth" min="1900-01-01" max="2016-01-01" required="required"  placeholder="DATE OF BIRTH"  ng-required="true"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'DATE OF BIRTH'">
+        <!-- <span class="help-block" ng-show="committeeForm.phone.$error.required || committeeForm.phone.$error.number">Valid phone number is required</span> -->
+      </div>
+
+
+      <div class="form-address form-entry">
+        <input class="form-address-input input" type="text" name="address"  ng-model="committeeForm.address" ng-maxlength="50" required="required" placeholder="ADDRESS" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ADDRESS'">
+      </div>
+
+      <div class="form-state form-entry">
+        <input class="form-state-input input" type="text" name="state"  ng-model="committeeForm.state" ng-maxlength="50" required="required" placeholder="STATE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'STATE'">
+      </div>
+
+
+      <div class="form-zip form-entry">
+        <input class="form-zip-input" type="number" name="zip" ng-model="committeeForm.zip" ng-minlength="6" ng-maxlength="6"  required="required"  placeholder="ZIP"  ng-required="true"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'ZIP'">
+        <!-- <span class="help-block" ng-show="committeeForm.phone.$error.required || registration.phone.$error.number">Valid phone number is required</span> -->
+        <!-- <span class="help-block" ng-show="((committeeForm.phone.$error.minlength || registration.phone.$error.maxlength) && registration.phone.$dirty) ">phone number should be 10 digits</span> -->
+      </div>
+
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 1">
+
+    <div class="form-computer form-entry">
+      <select class="form-select input" name="subject" ng-model="committeeForm.subject">
+        <option class="form-select-placeholder" value="" disabled selected>HAVE A COMPUTER?</option>
+        <option>NO</option><option>MAC</option><option>WINDOWS</option><option>LINUX/UNIX</option>
+      </select>
+      <div class="contact-select-arrow"><b></b></div>
+    </div>
+
+    <div class="form-internet form-entry">
+      <select class="form-select input" name="subject" ng-model="committeeForm.subject">
+        <option class="form-select-placeholder" value="" disabled selected>INTERNET ACCESS?</option>
+        <option>NO</option><option>MODEM</option><option>HI-SPEED</option>
+      </select>
+      <div class="contact-select-arrow"><b></b></div>
+    </div>
+
+    <label class="form-equipment form-entry">
+      <input type="checkbox" ng-model="committeeForm.equipment" checklist-model="committeeForm.equipment" checklist-value="equipment" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Minidisc player'">
+      <input type="checkbox" ng-model="committeeForm.equipment" checklist-model="committeeForm.equipment" checklist-value="equipment" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digital video camera'">
+      <input type="checkbox" ng-model="committeeForm.equipment" checklist-model="committeeForm.equipment" checklist-value="equipment" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Gaming System'">
+      <input type="checkbox" ng-model="committeeForm.equipment" checklist-model="committeeForm.equipment" checklist-value="equipment" onfocus="this.placeholder = ''" onblur="this.placeholder = 'DVD Player'">
+      <input type="checkbox" ng-model="committeeForm.equipment" checklist-model="committeeForm.equipment" checklist-value="equipment" onfocus="this.placeholder = ''" onblur="this.placeholder = 'MP3 Player'">
+
+    </label>
+
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 2">
+    <label for="">What are your favorite magazines?</label>
+    <div class="form-magazines form-entry">
+      <textarea class="form-magazines-input input" rows="5" name="magazines" ng-maxlength="50" ng-model="committeeForm.magazines" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 3">
+    <label for="">What are your favorite websites?</label>
+    <div class="form-websites form-entry">
+      <textarea class="form-websites-input input" rows="5" name="websites" ng-maxlength="50" ng-model="committeeForm.websites" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 4">
+    <label for="">Who are your 3 favorite artists of all time. Why?</label>
+    <div class="form-artists form-entry">
+      <textarea class="form-artists-input input" rows="5" name="artists" ng-maxlength="50" ng-model="committeeForm.artists" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 5">
+    <label for="">What are your 3 favorite CDs you have purchased in the past year?</label>
+    <div class="form-cds form-entry">
+      <textarea class="form-cds-input input" rows="5" name="cds" ng-maxlength="50" ng-model="committeeForm.cds" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 6">
+    <label for="">What record stores are in your area?</label>
+    <div class="form-record form-entry">
+      <textarea class="form-record-input input" rows="5" name="record" ng-maxlength="50" ng-model="committeeForm.record" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 7">
+    <label for="">What are your favorite movies? Why?</label>
+    <div class="form-movies form-entry">
+      <textarea class="form-movies-input input" rows="5" name="movies" ng-maxlength="50" ng-model="committeeForm.movies" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 8">
+    <label for="">What are your favorite clothing brands? Why?</label>
+    <div class="form-clothing form-entry">
+      <textarea class="form-clothing-input input" rows="5" name="clothing" ng-maxlength="50" ng-model="committeeForm.clothing" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 9">
+    <label for="">What are your favorite sneaker brands? Styles?</label>
+    <div class="form-sneaker form-entry">
+      <textarea class="form-sneaker-input input" rows="5" name="sneaker" ng-maxlength="50" ng-model="committeeForm.sneaker" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 10">
+    <label for="">What clothing stores are in your area?</label>
+    <div class="form-clothingstore form-entry">
+      <textarea class="form-clothingstore-input input" rows="5" name="clothingstore" ng-maxlength="50" ng-model="committeeForm.clothingstore" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 11">
+    <label for="">What skate or snowboard shops/parks are in your area?</label>
+    <div class="form-skate form-entry">
+      <textarea class="form-skate-input input" rows="5" name="skate" ng-maxlength="50" ng-model="committeeForm.skate" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 12">
+    <label for="">What music venues are in your area?</label>
+    <div class="form-venues form-entry">
+      <textarea class="form-venues-input input" rows="5" name="venues" ng-maxlength="50" ng-model="committeeForm.venues" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 13">
+    <label for="">Are you located near a major metropolitan area, if so which one?</label>
+    <div class="form-metropolitan form-entry">
+      <textarea class="form-metropolitan-input input" rows="5" name="metropolitan" ng-maxlength="50" ng-model="committeeForm.metropolitan" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 14">
+    <div class="form-venues form-entry">
+      <select class="form-select input" name="subject" ng-model="committeeForm.subject">
+        <option class="form-select-placeholder" value="" disabled selected>Are you willing to travel at all?</option>
+        <option>NO</option><option>yes</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 15">
+    <label for="">Tell us a little about yourself? (Hobbies, Interests, etc) 100 words</label>
+    <div class="form-yourself form-entry">
+      <textarea class="form-yourself-input input" rows="5" name="yourself" ng-maxlength="50" ng-model="committeeForm.yourself" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 16">
+    <label for="">What is your all-time favorite Staple tee or design, Why?</label>
+    <div class="form-design form-entry">
+      <textarea class="form-design-input input" rows="5" name="design" ng-maxlength="50" ng-model="committeeForm.design" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 17">
+    <label for="">Why do you want to be a part of the Staple Committee?, and why do you think you would make a valuable addition.</label>
+    <div class="form-why form-entry">
+      <textarea class="form-why-input input" rows="5" name="why" ng-maxlength="50" ng-model="committeeForm.why" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 18">
+    <label for="">How did you hear about the Staple Committee?</label>
+    <div class="form-hear form-entry">
+      <textarea class="form-hear-input input" rows="5" name="hear" ng-maxlength="50" ng-model="committeeForm.hear" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+    </div>
+  </div>
+
+  <div class="committee-form-section" ng-show="committeeStatus == 19">
+  <label for="">List any additional pertinent information about yourself:</label>
+  <div class="form-pertinent form-entry">
+    <textarea class="form-pertinent-input input" rows="5" name="pertinent" ng-maxlength="50" ng-model="committeeForm.pertinent" placeholder="TYPE HERE" onfocus="this.placeholder = ''" onblur="this.placeholder = 'TYPE HERE'" ></textarea>
+  </div>
+</div>
+
+
+
+<!-- committee sections -->
+</div>
