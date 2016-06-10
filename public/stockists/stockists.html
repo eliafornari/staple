@@ -1,6 +1,40 @@
-<div class="stockists" ng-controller="stockistsCtrl" summary="this is the content of stockists">
+<div class="stockist" ng-controller="stockistsCtrl" summary="this is the content of stockists">
+
+  <div class="stockist-list">
+
+    <div class="stockist-list-filter" ng-init="filterStores.data['stockist.area'].value = 'USA'; thisArea = 'USA'">
+      <a ng-click="filterStores.data['stockist.area'].value = 'USA'; thisArea = 'USA'" ng-class="{'areaSelected': thisArea == 'USA'}">USA</a>
+      <a ng-click="filterStores.data['stockist.area'].value = 'other'; thisArea = 'other'" ng-class="{'areaSelected': thisArea == 'other'}">OTHER</a>
+
+    </div>
+
+    <ul class="stockist-list-ul">
+      <li class="stockist-list-li" ng-repeat="s in Stockist | filter:filterStores track by $index" ng-click="thisStockist(s.uid)">
+        <a ng-class="{'storeSelected': s.uid == mainStockist.uid}">{{s.data['stockist.name'].value}}</a>
+      </li>
+    </ul>
+
+  </div>
+
+
+  <div class="stockist-main">
+
+    <div class="stockist-main-text">
+      <h2 class="stockist-main-text-name">{{mainStockist.data['stockist.name'].value}}</h2>
+      <p class="stockist-main-text-p">{{mainStockist.data['stockist.address'].value}}</p>
+      <p class="stockist-main-text-p">{{mainStockist.data['stockist.city'].value}}</p>
+      <p class="stockist-main-text-p">{{mainStockist.data['stockist.state'].value}}</p>
+      <p class="stockist-main-text-p">{{mainStockist.data['stockist.country'].value}}</p>
+    </div>
+
+    <iframe class="stockist-main-map" ng-src="{{mapFilter(mainStockist.data['stockist.location'].value.latitude , mainStockist.data['stockist.location'].value.longitude)}}"></iframe>
+<!-- ng-src="{{mapFilter(mainStockist.data['stockist.location'].value.latitude , mainStockist.data['stockist.location'].value.longitude)}}" -->
+  </div>
 
 
 
+<!-- <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+</script> -->
 
 </div>

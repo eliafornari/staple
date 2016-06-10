@@ -71,3 +71,14 @@
 
   }
 }
+
+
+
+
+
+.selected{
+  color: $orange;
+  label, input, a, p{
+    color: $orange;
+  }
+}

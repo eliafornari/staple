@@ -1,4 +1,4 @@
-<div class="about">
+<div class="about" ng-controller="aboutCtrl">
 
 
 
@@ -10,7 +10,7 @@
           <td>
             <div class="about-section-entry"  ng-repeat="f in a.sections">
               <div class="about-section-entry-image" style="background-image: url('{{f.url}}')" ng-if="f.type == 'image'"></div>
-              <div class="about-section-entry-text" ng-if="f.type == 'text'"><p>{{f.text}}</p></div>
+              <p class="about-section-entry-text" ng-if="f.type == 'text'"><span ng-bind-html="f.text"></span></p>
             </div>
           </td>
         </tr>
@@ -33,9 +33,8 @@
 
 
 <div class="about-arrows">
-
   <a class="about-arrows-up" ng-click="previousAbout()"><arrow-directive></arrow-directive></a>
-  <a class="about-arrows-down" ng-click="previousAbout()"><arrow-directive></arrow-directive></a>
+  <a class="about-arrows-down" ng-click="nextAbout()"><arrow-directive></arrow-directive></a>
 </div>
 
 </div>

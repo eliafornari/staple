@@ -4,6 +4,7 @@ Social.controller('socialCtrl', function($scope, $location, $rootScope, $routePa
 
 
   $rootScope.pageLoading = true;
+  $scope.socialLoading = true;
 
   setTimeout(function(){
     $rootScope.viewLoaded = true;
@@ -15,8 +16,6 @@ Social.controller('socialCtrl', function($scope, $location, $rootScope, $routePa
 
     //setting an animation class for this specific page
     $scope.pageClass = 'page-social';
-
-
 
 
 
@@ -58,13 +57,23 @@ Social.controller('socialCtrl', function($scope, $location, $rootScope, $routePa
 
 
     $http({url: '/data', method: 'get', cache: true, isArray:true})
-
     .success(function(response1){
-
       $rootScope.instaTotal = response1.data;
       console.log($rootScope.instaTotal);
 
+      setTimeout(function(){
+        $scope.socialLoading = false;
+        $rootScope.$apply();
+      }, 000);
+
     });
+
+
+
+
+
+
+
 
 
 

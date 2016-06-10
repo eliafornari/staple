@@ -16,6 +16,14 @@
   left:$margin-sides;
   top:$margin-sides;
   z-index: $z-header;
+  @include respond-to(phone){
+    top:auto;
+    left: auto;
+    right:$margin-sides;
+    bottom:$margin-sides;
+    width:50px;
+    height: 50px;
+  }
   .header-wrapper{
     width:100%;
     height:auto;
@@ -31,6 +39,10 @@
       height:70px;
       right: 0;
       top: 0;
+      @include respond-to(phone){
+        width:50px;
+        height: 50px;
+      }
       svg{
         width:100%;
         margin: 0;
@@ -75,6 +87,13 @@
   top:$margin-sides;
   z-index: $z-header;
   @include hover-effect-background-color(transparent, $black);
+  @include respond-to(phone){
+    top:auto;
+    right:auto;
+    left:$margin-sides;
+    bottom:$margin-sides;
+    height: auto;
+  }
 
   a{
     display: block;
@@ -97,11 +116,19 @@
   height:100vh;
   background-color: rgba(255,255,255,0.95);
   z-index: $z-nav;
+  table{
+    @include respond-to(phone){
+      height: calc(100vh - 170px);
+    }
+  }
 }
 
 .nav-content{
   width:60vw;
   margin: auto;
+  @include respond-to(phone){
+    width:100vw;
+  }
   .nav-ul{
     .nav-li{
       text-align: center;
@@ -118,6 +145,49 @@
 
 
 
+
+
+.nav-extra{
+  position: fixed;
+  left:$margin-sides;
+  bottom: $margin-sides;
+  a{
+    margin-left: 20px;
+    display: inline-block;
+    @include paragraph();
+    @include hover-effect-color($black, $orange);
+  }
+}
+
+.subscribe-form{
+  display: inline-block;
+  width:200px;
+  .subscribe-form-content{
+    width:200px;
+
+    .subscribe-form-email{
+      display: inline-block;
+      width:150px;
+      border-bottom: 1px solid black;
+      @include paragraph();
+    }
+    .subscribe-form-button{
+      display: inline-block;
+      width:45px;
+      border: 0;
+      border-radius: 0;
+      background-color: #FFFFFF;
+      color:#000000;
+      @include paragraph();
+      &:hover{
+        background-color: #000000;
+        color:#FFFFFF;
+      }
+    }
+  }
+}
+
+
 .navOpen.ng-hide-add.ng-add-add-active{
 
   transition:none;
@@ -125,4 +195,38 @@
   -o-transition:none;
   -moz-transition:none;
   -webkit-transition:none;
+}
+
+
+
+
+
+$animation-bezier: ease-in;
+$animation-speed: 0.3s;
+
+.nav-extra{
+  left:-200px;
+}
+
+.nav-extra.subscribeRight{
+  left:20px;
+}
+
+
+
+.nav-extra.subscribeRight-remove.subscribeRight-remove-active{
+  -webkit-transition: subscribe_left $animation-speed $animation-bezier;
+  -moz-transition: subscribe_left $animation-speed $animation-bezier;
+  -ms-transition: subscribe_left $animation-speed $animation-bezier;
+  -o-transition: subscribe_left $animation-speed $animation-bezier;
+  transition: subscribe_left $animation-speed $animation-bezier;
+}
+
+.nav-extra.subscribeRight-add.subscribeRight-add-active{
+
+  -webkit-transition: subscribe_right $animation-speed $animation-bezier;
+  -moz-transition: subscribe_right $animation-speed $animation-bezier;
+  -ms-transition: subscribe_right $animation-speed $animation-bezier;
+  -o-transition: subscribe_right $animation-speed $animation-bezier;
+  transition: subscribe_right $animation-speed $animation-bezier;
 }

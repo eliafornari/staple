@@ -1,0 +1,91 @@
+.stockist{
+  position: relative;
+  width: 100vw;
+  height:100vh;
+}
+
+
+
+.stockist-list{
+  position: absolute;
+  width:50vw;
+  height:100vh;
+  right:0;
+  top:0;
+  border-left: 10px solid #000000;
+
+  .stockist-list-filter{
+    width: 50vw;
+    margin: auto;
+    margin-top:100px;
+    a{
+      width: 50%;
+      display: block;
+      float: left;
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+    }
+  }
+
+  .stockist-list-ul{
+    width: 45vw;
+    height:auto;
+    display: table;
+    position: relative;
+    left:2.5vw;
+    top:2.5vw;
+    .stockist-list-li{
+      width: 100%;
+      text-align: center;
+      height: 5vh;
+      float: left;
+      margin: 0;
+      a{
+        height: 5vh;
+        line-height: 5vh;
+      }
+    }
+  }
+
+}
+
+.areaSelected{
+  background-color: #000000;
+  color:#FFFFFF;
+}
+
+.storeSelected{
+  color:$orange;
+}
+
+
+
+.stockist-main{
+  position: absolute;
+  width:50vw;
+  height:100vh;
+  left:0;
+  top:0;
+  .stockist-main-text{
+    position: relative;
+    left:$margin-sides;
+    margin-top:200px;
+    .stockist-main-text-name{
+      position: relative;
+      @include subtitle();
+    }
+    .stockist-main-text-p{
+      position: relative;
+      @include paragraph();
+    }
+  }
+  .stockist-main-map{
+    position: absolute;
+    // top:$margin-top;
+    width:50vw;
+    height:50vh;
+    bottom:0;
+
+  }
+}

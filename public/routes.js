@@ -4,7 +4,7 @@
   in this file. Since this isn't a node course we're going to skip it. For all intensive
   purposes, html5 mode and url hash mode perform the same when within an angular app.
 */
-angular.module('myApp.routes', ['ngRoute', 'ngAnimate', 'ngResource'])
+angular.module('myApp.routes', ['ngRoute', 'ngAnimate', 'ngResource', 'mailchimp'])
 
 .run(['$anchorScroll', '$route', '$rootScope', '$location', '$routeParams','$templateCache', function($anchorScroll, $route, $rootScope, $location, $routeParams, $templateCache) {
 
@@ -34,42 +34,13 @@ $rootScope.pageLoading = true;
     };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   }])//run end
 
 
 
   .filter('trustUrl', function ($sce) {
       return function(url) {
+
           var trusted = $sce.trustAsResourceUrl(url);
           return trusted;
       };
@@ -345,12 +316,8 @@ $rootScope.firstLoading = true;
                           .submit(function (err, response) {
 
                               var Data = response;
-
-                              setTimeout(function(){
-
-                                $rootScope.pageLoading = false;
-                                $rootScope.$apply();
-                              }, 500);
+                              $rootScope.pageLoading = false;
+                              $rootScope.$apply();
 
                               if(type =='collection'){
                                 $rootScope.Collection = response.results;

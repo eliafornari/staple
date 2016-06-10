@@ -19,7 +19,12 @@
     .about-section-entry{
       display:inline-block;
       width:500px;
-      height:300px;
+      height:auto;
+      margin-left: $margin-sides;
+      // &:nth-child(1){
+      //   margin-left: 0;
+      // }
+
       .about-section-entry-image{
         width:500px;
         height:300px;
@@ -29,8 +34,12 @@
       }
       .about-section-entry-text{
         width:500px;
-        height:300px;
+        height:auto;
         @include paragraph();
+        span{
+          display: block;
+          white-space: normal;
+        }
       }
     }
   }

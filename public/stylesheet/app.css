@@ -14,7 +14,18 @@
   height: 70px;
   left: 20px;
   top: 20px;
-  z-index: 13; }
+  z-index: 13;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .header {
+      top: auto;
+      left: auto;
+      right: 20px;
+      bottom: 20px;
+      width: 50px;
+      height: 50px; } }
   .header .header-wrapper {
     width: 100%;
     height: auto;
@@ -33,7 +44,10 @@
       width: 100%;
       height: 70px;
       right: 0;
-      top: 0; }
+      top: 0;
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/ }
       .header .header-wrapper .logo-wrapper:hover {
         background-color: #ff481b;
         /*  @if $media == large-desktop {
@@ -54,6 +68,10 @@
         @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
           .header .header-wrapper .logo-wrapper:hover {
             background-color: #000000 !important; } }
+      @media only screen and (min-width: 0px) and (max-width: 767px) {
+        .header .header-wrapper .logo-wrapper {
+          width: 50px;
+          height: 50px; } }
       .header .header-wrapper .logo-wrapper svg {
         width: 100%;
         margin: 0;
@@ -88,7 +106,10 @@
   -webkit-transition: background-color 0.4s ease;
   -moz-transition: background-color 0.4s ease;
   -ms-transition: background-color 0.4s ease;
-  -o-transition: background-color 0.4s ease; }
+  -o-transition: background-color 0.4s ease;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
   .shop:hover {
     background-color: #000000;
     /*  @if $media == large-desktop {
@@ -109,6 +130,13 @@
     @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
       .shop:hover {
         background-color: transparent !important; } }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .shop {
+      top: auto;
+      right: auto;
+      left: 20px;
+      bottom: 20px;
+      height: auto; } }
   .shop a {
     display: block;
     width: 100%;
@@ -129,10 +157,23 @@
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.95);
   z-index: 12; }
+  .nav table {
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/ }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .nav table {
+        height: calc(100vh - 170px); } }
 
 .nav-content {
   width: 60vw;
-  margin: auto; }
+  margin: auto;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .nav-content {
+      width: 100vw; } }
   .nav-content .nav-ul .nav-li {
     text-align: center; }
     .nav-content .nav-ul .nav-li a p {
@@ -168,12 +209,95 @@
           .nav-content .nav-ul .nav-li a p:hover {
             color: #000000 !important; } }
 
+.nav-extra {
+  position: fixed;
+  left: 20px;
+  bottom: 20px; }
+  .nav-extra a {
+    margin-left: 20px;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 22px;
+    font-family: helvetica;
+    color: #000000;
+    transition: color 0.4s ease;
+    -webkit-transition: color 0.4s ease;
+    -moz-transition: color 0.4s ease;
+    -ms-transition: color 0.4s ease;
+    -o-transition: color 0.4s ease; }
+    .nav-extra a:hover {
+      color: #ff481b;
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/ }
+      @media only screen and (min-width: 0px) and (max-device-width: 767px) {
+        .nav-extra a:hover {
+          color: #000000 !important; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: portrait) {
+        .nav-extra a:hover {
+          color: #000000 !important; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
+        .nav-extra a:hover {
+          color: #000000 !important; } }
+
+.subscribe-form {
+  display: inline-block;
+  width: 200px; }
+  .subscribe-form .subscribe-form-content {
+    width: 200px; }
+    .subscribe-form .subscribe-form-content .subscribe-form-email {
+      display: inline-block;
+      width: 150px;
+      border-bottom: 1px solid black;
+      font-size: 12px;
+      line-height: 22px;
+      font-family: helvetica; }
+    .subscribe-form .subscribe-form-content .subscribe-form-button {
+      display: inline-block;
+      width: 45px;
+      border: 0;
+      border-radius: 0;
+      background-color: #FFFFFF;
+      color: #000000;
+      font-size: 12px;
+      line-height: 22px;
+      font-family: helvetica; }
+      .subscribe-form .subscribe-form-content .subscribe-form-button:hover {
+        background-color: #000000;
+        color: #FFFFFF; }
+
 .navOpen.ng-hide-add.ng-add-add-active {
   transition: none;
   -ms-transition: none;
   -o-transition: none;
   -moz-transition: none;
   -webkit-transition: none; }
+
+.nav-extra {
+  left: -200px; }
+
+.nav-extra.subscribeRight {
+  left: 20px; }
+
+.nav-extra.subscribeRight-remove.subscribeRight-remove-active {
+  -webkit-transition: subscribe_left 0.3s ease-in;
+  -moz-transition: subscribe_left 0.3s ease-in;
+  -ms-transition: subscribe_left 0.3s ease-in;
+  -o-transition: subscribe_left 0.3s ease-in;
+  transition: subscribe_left 0.3s ease-in; }
+
+.nav-extra.subscribeRight-add.subscribeRight-add-active {
+  -webkit-transition: subscribe_right 0.3s ease-in;
+  -moz-transition: subscribe_right 0.3s ease-in;
+  -ms-transition: subscribe_right 0.3s ease-in;
+  -o-transition: subscribe_right 0.3s ease-in;
+  transition: subscribe_right 0.3s ease-in; }
 
 /*....................................General settings..................................*/
 /*.....................TEXT MARK STYLES......................*/
@@ -312,7 +436,8 @@ table {
     .about-list .about-section .about-section-entry {
       display: inline-block;
       width: 500px;
-      height: 300px; }
+      height: auto;
+      margin-left: 20px; }
       .about-list .about-section .about-section-entry .about-section-entry-image {
         width: 500px;
         height: 300px;
@@ -321,10 +446,13 @@ table {
         background-position: center; }
       .about-list .about-section .about-section-entry .about-section-entry-text {
         width: 500px;
-        height: 300px;
+        height: auto;
         font-size: 12px;
         line-height: 22px;
         font-family: helvetica; }
+        .about-list .about-section .about-section-entry .about-section-entry-text span {
+          display: block;
+          white-space: normal; }
 
 .about-current {
   position: fixed;
@@ -626,6 +754,11 @@ textarea {
     top: 0;
     left: 0; }
 
+.selected {
+  color: #ff481b; }
+  .selected label, .selected input, .selected a, .selected p {
+    color: #ff481b; }
+
 .social {
   width: 100vw;
   height: 100vh; }
@@ -636,6 +769,47 @@ textarea {
   overflow-x: scroll;
   overflow-y: hidden; }
 
+.social-link {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  width: 200px;
+  margin-left: -100px; }
+  .social-link a {
+    font-size: 20px;
+    line-height: 30px;
+    font-family: helvetica;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-align: center;
+    display: block;
+    color: #000000;
+    transition: color 0.4s ease;
+    -webkit-transition: color 0.4s ease;
+    -moz-transition: color 0.4s ease;
+    -ms-transition: color 0.4s ease;
+    -o-transition: color 0.4s ease; }
+    .social-link a:hover {
+      color: #ff481b;
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/ }
+      @media only screen and (min-width: 0px) and (max-device-width: 767px) {
+        .social-link a:hover {
+          color: #000000 !important; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: portrait) {
+        .social-link a:hover {
+          color: #000000 !important; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
+        .social-link a:hover {
+          color: #000000 !important; } }
+
 .social-instagram-ul {
   display: table;
   width: auto;
@@ -645,6 +819,23 @@ textarea {
     display: inline-block;
     height: 600px;
     width: 600px; }
+    .social-instagram-ul .social-instagram-li .social-loading {
+      width: 100%;
+      height: 600px;
+      margin: auto;
+      display: block;
+      position: relative; }
+      .social-instagram-ul .social-instagram-li .social-loading p {
+        width: 100%;
+        text-align: center;
+        height: 30px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -15px;
+        font-size: 12px;
+        line-height: 22px;
+        font-family: helvetica; }
     .social-instagram-ul .social-instagram-li img {
       width: 80%;
       margin: auto;
@@ -653,5 +844,80 @@ textarea {
       width: 80%;
       margin: auto;
       display: block; }
+
+.stockist {
+  position: relative;
+  width: 100vw;
+  height: 100vh; }
+
+.stockist-list {
+  position: absolute;
+  width: 50vw;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  border-left: 10px solid #000000; }
+  .stockist-list .stockist-list-filter {
+    width: 50vw;
+    margin: auto;
+    margin-top: 100px; }
+    .stockist-list .stockist-list-filter a {
+      width: 50%;
+      display: block;
+      float: left;
+      text-align: center;
+      height: 50px;
+      line-height: 50px; }
+  .stockist-list .stockist-list-ul {
+    width: 45vw;
+    height: auto;
+    display: table;
+    position: relative;
+    left: 2.5vw;
+    top: 2.5vw; }
+    .stockist-list .stockist-list-ul .stockist-list-li {
+      width: 100%;
+      text-align: center;
+      height: 5vh;
+      float: left;
+      margin: 0; }
+      .stockist-list .stockist-list-ul .stockist-list-li a {
+        height: 5vh;
+        line-height: 5vh; }
+
+.areaSelected {
+  background-color: #000000;
+  color: #FFFFFF; }
+
+.storeSelected {
+  color: #ff481b; }
+
+.stockist-main {
+  position: absolute;
+  width: 50vw;
+  height: 100vh;
+  left: 0;
+  top: 0; }
+  .stockist-main .stockist-main-text {
+    position: relative;
+    left: 20px;
+    margin-top: 200px; }
+    .stockist-main .stockist-main-text .stockist-main-text-name {
+      position: relative;
+      font-size: 20px;
+      line-height: 30px;
+      font-family: helvetica;
+      font-weight: bold;
+      letter-spacing: 5px; }
+    .stockist-main .stockist-main-text .stockist-main-text-p {
+      position: relative;
+      font-size: 12px;
+      line-height: 22px;
+      font-family: helvetica; }
+  .stockist-main .stockist-main-map {
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    bottom: 0; }
 
 /*# sourceMappingURL=app.css.map */

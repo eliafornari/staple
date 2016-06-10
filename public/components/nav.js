@@ -23,17 +23,18 @@ $rootScope.isNavOpen = false;
 
 
 
-  $rootScope.navOpenArtist=function(){
-    $rootScope.openArtists($rootScope.Artist[0].uid,0);
-  }
+$scope.isSubscribe = false;
 
-  $rootScope.navOpenRelease=function(){
-    $rootScope.openRelease($rootScope.Release[0].uid,0);
-  }
 
-  $rootScope.navOpenJournal=function(){
-    $rootScope.openJournal($rootScope.Journal[0].uid,0);
-  }
+$scope.showSubscribe = function(){
+  $scope.isSubscribe = !$scope.isSubscribe;
+}
+
+
+
+
+
+
 
 
 
@@ -167,6 +168,16 @@ $rootScope.isNavOpen = false;
 })
 
 
+.directive('subscribeDirective', function($rootScope, $location, $window, $routeParams, $timeout) {
+  return {
+    restrict: 'E',
+    templateUrl: 'components/subscribe-form.html',
+    replace: true,
+    link: function(scope, elem, attrs) {
+
+    }
+  };
+})
 
 
 .directive('navDirective', function($rootScope, $location, $window, $routeParams, $timeout) {

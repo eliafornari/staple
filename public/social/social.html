@@ -9,8 +9,13 @@
                 <table>
                   <tr>
                     <td>
-                      <img class="social-instagram-img" src="{{s.images.standard_resolution.url}}" alt="{{s.caption.text}}" ng-if="s.type == 'image'"/>
-                      <video autoplay loop muted poster="{{s.images.standard_resolution.url}}" ng-if="s.type == 'video'">
+
+                      <div class="social-loading" ng-show="socialLoading">
+                        <p>loading...</p>
+                      </div>
+
+                      <img class="social-instagram-img" src="{{s.images.standard_resolution.url}}" alt="{{s.caption.text}}" ng-if="s.type == 'image'" ng-hide="socialLoading"/>
+                      <video autoplay loop muted poster="{{s.images.standard_resolution.url}}" ng-if="s.type == 'video'" ng-hide="socialLoading">
                         <source src="{{s.videos.standard_resolution.url}}" type="video/mp4">
                       </video>
                     </td>
@@ -22,5 +27,13 @@
       </td>
     </tr>
   </table>
+
+
+
+
+
+  <div class="social-link">
+    <a href="https://www.instagram.com/staplepigeon/" target="_blank">@staplepigeon</a>
+  </div>
 
 </div>

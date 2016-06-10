@@ -76,13 +76,17 @@ $rootScope.About ={};
             $scope.aboutIndex = $scope.aboutIndex + 1;
             $rootScope.mainAbout = $rootScope.About[$scope.aboutIndex];
             console.log("befo the bound");
+            console.log($scope.aboutIndex);
+            console.log($rootScope.About[$scope.aboutIndex].uid);
+            anchorSmoothScroll.scrollTo('about-'+$rootScope.About[$scope.aboutIndex].uid);
         }
         else if($scope.aboutIndex>=0){
           $scope.aboutIndex = 0;
           $rootScope.mainAbout = $rootScope.About[$scope.aboutIndex];
-          console.log("over the bound");
+
+          anchorSmoothScroll.scrollTo('about-'+$rootScope.About[$scope.aboutIndex].uid);
         }
-        anchorSmoothScroll.scrollTo('about-'+$rootScope.About[$scope.aboutIndex].uid);
+
 
 
       };
@@ -92,14 +96,26 @@ $rootScope.About ={};
             if($scope.aboutIndex>0){
                 $scope.aboutIndex = $scope.aboutIndex - 1;
                 $rootScope.mainAbout = $rootScope.About[$scope.mainIndex];
+
+
+                console.log($scope.aboutIndex);
+                console.log($rootScope.About[$scope.aboutIndex].uid);
+                console.log("befo the bound");
+                anchorSmoothScroll.scrollTo('about-'+$rootScope.About[$scope.aboutIndex].uid);
             }
             else if($scope.aboutIndex<=0){
-              $scope.aboutIndex = $rootScope.About.length;
+              $scope.aboutIndex = $rootScope.About.length -1;
               $rootScope.mainAbout = $rootScope.About[$scope.aboutIndex];
+
+
+              console.log($scope.aboutIndex);
+              console.log($rootScope.About[$scope.aboutIndex].uid);
+              console.log("over the bound");
+              anchorSmoothScroll.scrollTo('about-'+$rootScope.About[$scope.aboutIndex].uid);
+
             }
 
 
-        anchorSmoothScroll.scrollTo('about-'+$rootScope.About[$scope.aboutIndex].uid);
 
 
       };

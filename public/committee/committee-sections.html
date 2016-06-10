@@ -48,7 +48,7 @@
   <div class="committee-form-section" ng-show="committeeStatus == 1">
 
     <div class="form-computer form-entry">
-      <select class="form-select input" name="subject" ng-model="committeeForm.subject">
+      <select class="form-select input" name="subject" ng-model="committeeForm.computer">
         <option class="form-select-placeholder" value="" disabled selected>HAVE A COMPUTER?</option>
         <option>NO</option><option>MAC</option><option>WINDOWS</option><option>LINUX/UNIX</option>
       </select>
@@ -56,21 +56,32 @@
     </div>
 
     <div class="form-internet form-entry">
-      <select class="form-select input" name="subject" ng-model="committeeForm.subject">
+      <select class="form-select input" name="subject" ng-model="committeeForm.internet">
         <option class="form-select-placeholder" value="" disabled selected>INTERNET ACCESS?</option>
         <option>NO</option><option>MODEM</option><option>HI-SPEED</option>
       </select>
       <div class="contact-select-arrow"><b></b></div>
     </div>
 
-    <label class="form-equipment form-entry">
-      <input type="checkbox" ng-model="committeeForm.equipment" checklist-model="committeeForm.equipment" checklist-value="equipment" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Minidisc player'">
+    <div class="form-equipment form-entry">
+      What equipment do you own?
+
+      {{committeeForm.equipment}}
+
+      <ul>
+        <li><label for="" ng-class="{'selected': committeeForm.equipment == 'Digital Video Camera'}">Digital video camera</label><input type="checkbox" ng-model="committeeForm.equipment" ng-true-value="'Digital Video Camera'"></li>
+        <li><label for="" ng-class="{'selected': committeeForm.equipment == 'Gaming System'}">Gaming System</label><input type="checkbox" ng-model="committeeForm.equipment" ng-true-value="'Gaming System'"></li>
+        <li><label for="" ng-class="{'selected': committeeForm.equipment == 'DVD Player'}">DVD Player</label><input type="checkbox" ng-model="committeeForm.equipment" ng-true-value="'DVD Player'"></li>
+        <li><label for="" ng-class="{'selected': committeeForm.equipment == 'MP3 Player'}">MP3 Player</label><input type="checkbox" ng-model="committeeForm.equipment" ng-true-value="'MP3 Player'"></li>
+      </ul>
+
+      <!-- <input type="checkbox" ng-model="committeeForm.equipment" checklist-model="committeeForm.equipment" checklist-value="equipment" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Minidisc player'">
       <input type="checkbox" ng-model="committeeForm.equipment" checklist-model="committeeForm.equipment" checklist-value="equipment" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digital video camera'">
       <input type="checkbox" ng-model="committeeForm.equipment" checklist-model="committeeForm.equipment" checklist-value="equipment" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Gaming System'">
       <input type="checkbox" ng-model="committeeForm.equipment" checklist-model="committeeForm.equipment" checklist-value="equipment" onfocus="this.placeholder = ''" onblur="this.placeholder = 'DVD Player'">
-      <input type="checkbox" ng-model="committeeForm.equipment" checklist-model="committeeForm.equipment" checklist-value="equipment" onfocus="this.placeholder = ''" onblur="this.placeholder = 'MP3 Player'">
+      <input type="checkbox" ng-model="committeeForm.equipment" checklist-model="committeeForm.equipment" checklist-value="equipment" onfocus="this.placeholder = ''" onblur="this.placeholder = 'MP3 Player'"> -->
 
-    </label>
+    </div>
 
   </div>
 

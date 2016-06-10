@@ -1,4 +1,4 @@
-<nav ng-controller="navCtrl" class="nav" ng-show="isNavOpen" ng-click="closeNav()">
+<nav ng-controller="navCtrl" class="nav" ng-show="isNavOpen" >
 
 
 
@@ -22,9 +22,14 @@
   </table>
 
 
-  <div class="nav-subscribe" ng-click="closeNav()"><a href="/subscribe"><p>subscribe</p></a></div>
+  <div class="nav-extra" ng-class="{'subscribeRight': isSubscribe}">
+
+    <subscribe-directive></subscribe-directive>
+    <a ng-click="showSubscribe()">subscribe</a>
+
+    <!-- <a href="/legal" ng-click="closeNav()">legal</a> -->
+  </div>
 
 
-  <div class="nav-subscribe" ng-click="closeNav()"><a href="/legal"><p>legal</p></a></div>
 
 </nav>

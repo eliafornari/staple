@@ -2,8 +2,23 @@
   "list_number": 3,
   "list":[
           {
-            "name":"staple design",
-            "uid":"stapledesign",
+            "name":"staple pigeon",
+            "uid":"staplepigeon",
+            "sections":[
+                          {
+                            "type": "image",
+                            "url": "assets/about/For-About-Page.jpg"
+                          },
+                          {
+                            "type": "text",
+                            "text": "In 1997, jeffstaple walked into a boutique in New York City wearing a shirt he printed in his silkscreen class at Parsons School of Design. He had no intention of even wanting to start a brand. He walked out of that store with an order of 12 shirts. Staple was officially open for business. What started as a small T-Shirt line handmade by jeffstaple, grew organically and began to gain visibility in NYC. In the process of building this burgeoning brand, Nikeasked jeffstaple in 2005 to create a special commemorative sneaker that would represent New York. The Staple Pigeon Dunk SB was conceived and lead to much fanfare upon its release and exposed Staple—as well as sneaker culture—to the masses. @StaplePigeon is now a world renowned brand which reflects the gritty and never-ending energy New Yorkers (and all urban dwellers) possess. It not only exists as a representation of New York, but The Pigeon is also the influence behind Staple’s extensive apparel range and collaborative items available across the world. Inspired by street culture and design, Staple’s reach encompasses many different landscapes such as fashion, music, sport, and art. TWO DECADES ON, STAPLE CONTINUES TO BE A POSITIVE SOCIAL CONTAGION."
+                          }
+
+                        ]
+          },
+          {
+            "name":"staple design studio",
+            "uid":"stapledesignstudio",
             "sections":[
                           {
                             "type": "image",
@@ -11,7 +26,7 @@
                           },
                           {
                             "type": "text",
-                            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            "text": "#StapleDesignStudio is a creative consulting firm that has worked with some of the most prestigious brands in the world including Nike, Microsoft, Sony, Lotus, Timberland, Uniqlo, Kia, Oakley, New Balance, LVMH and others. Staple Design Studio operates in NYC and has been serving clients since 1997. See www.stapledesign.com for more info."
                           },
                           {
                             "type": "image",
@@ -20,32 +35,6 @@
 
                         ]
           },
-
-
-
-
-          {
-            "name":"jeff staple",
-            "uid":"jeffstaple",
-            "sections":[
-                          {
-                            "type": "image",
-                            "url": "assets/about/jeffstaple-1.jpeg"
-                          },
-                          {
-                            "type": "text",
-                            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                          }
-
-                        ]
-          },
-
-
-
-
-
-
-
 
 
           {
@@ -58,7 +47,7 @@
                           },
                           {
                             "type": "text",
-                            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            "text": "@ReedSpace is often regarded as one of the world’s best and most innovative multi-brand boutiques. It also features an art gallery, which has hosted some of our generation’s most celebrated artists. See www.thereedspace.com for more info. @jeffstaple is also CCO of Intertrend (intertrend.com) & Imprint Venture Lab (imprintventurelab.com). He is also a member of The #Hypebeast100, #Heineken100, Anthos Capital Group, The AIGA, Soho House, Neue House, Grind Space, Agenda Emerge, Apple Keynote Speaker, SneakerCon Legends Series, Remy Martin Circle of Centaurs, The Parsons 30 Alumni, Google Explorer."
                           }
 
                         ]

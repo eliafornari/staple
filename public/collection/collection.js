@@ -61,7 +61,7 @@ $rootScope.previousCollection = function() {
           $rootScope.mainCollection = $rootScope.Collection[$scope.mainIndex];
       }
       else if($scope.mainIndex<=0){
-        $scope.mainIndex = $rootScope.Collection.length;
+        $scope.mainIndex = $rootScope.Collection.length -1;
         $rootScope.mainCollection = $rootScope.Collection[$scope.mainIndex];
       }
 
