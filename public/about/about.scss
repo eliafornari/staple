@@ -50,9 +50,9 @@
 .about-current{
   position: fixed;
   bottom:$margin-sides;
-  width:500px;
-  left:50%;
-  margin-left: -250px;
+  width: 70vw;
+  left: 50%;
+  margin-left: -35vw;
   z-index: $z-collection-current;
   .about-current-season{
     p{
@@ -74,6 +74,7 @@
     height:50px;
     @include transform-element(rotate(180deg));
     transform-origin: center;
+    @include hover-effect-fill($black, $orange, 'stroke');
     svg{
       width:100%;
       height:100%;
@@ -84,6 +85,7 @@
     display:block;
     width:50px;
     height:50px;
+    @include hover-effect-fill($black, $orange, 'stroke');
     svg{
       width:100%;
       height:100%;

@@ -457,9 +457,9 @@ table {
 .about-current {
   position: fixed;
   bottom: 20px;
-  width: 500px;
+  width: 70vw;
   left: 50%;
-  margin-left: -250px;
+  margin-left: -35vw;
   z-index: 10; }
   .about-current .about-current-season p {
     font-size: 35px;
@@ -488,6 +488,33 @@ table {
     /* Safari */
     transform-origin: 0 0;
     transform-origin: center; }
+    .about-arrows .about-arrows-up svg g, .about-arrows .about-arrows-up svg path, .about-arrows .about-arrows-up svg rect, .about-arrows .about-arrows-up svg line, .about-arrows .about-arrows-up svg polyline {
+      stroke: #000000;
+      transition: stroke 0.4s ease;
+      -webkit-transition: stroke 0.4s ease;
+      -moz-transition: stroke 0.4s ease;
+      -ms-transition: stroke 0.4s ease;
+      -o-transition: stroke 0.4s ease; }
+    .about-arrows .about-arrows-up:hover svg g, .about-arrows .about-arrows-up:hover svg path, .about-arrows .about-arrows-up:hover svg rect, .about-arrows .about-arrows-up:hover svg line, .about-arrows .about-arrows-up:hover svg polyline {
+      stroke: #ff481b;
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/ }
+      @media only screen and (min-width: 0px) and (max-device-width: 767px) {
+        .about-arrows .about-arrows-up:hover svg g, .about-arrows .about-arrows-up:hover svg path, .about-arrows .about-arrows-up:hover svg rect, .about-arrows .about-arrows-up:hover svg line, .about-arrows .about-arrows-up:hover svg polyline {
+          stroke: #000000 !important; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: portrait) {
+        .about-arrows .about-arrows-up:hover svg g, .about-arrows .about-arrows-up:hover svg path, .about-arrows .about-arrows-up:hover svg rect, .about-arrows .about-arrows-up:hover svg line, .about-arrows .about-arrows-up:hover svg polyline {
+          stroke: #000000 !important; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
+        .about-arrows .about-arrows-up:hover svg g, .about-arrows .about-arrows-up:hover svg path, .about-arrows .about-arrows-up:hover svg rect, .about-arrows .about-arrows-up:hover svg line, .about-arrows .about-arrows-up:hover svg polyline {
+          stroke: #000000 !important; } }
     .about-arrows .about-arrows-up svg {
       width: 100%;
       height: 100%;
@@ -496,6 +523,33 @@ table {
     display: block;
     width: 50px;
     height: 50px; }
+    .about-arrows .about-arrows-down svg g, .about-arrows .about-arrows-down svg path, .about-arrows .about-arrows-down svg rect, .about-arrows .about-arrows-down svg line, .about-arrows .about-arrows-down svg polyline {
+      stroke: #000000;
+      transition: stroke 0.4s ease;
+      -webkit-transition: stroke 0.4s ease;
+      -moz-transition: stroke 0.4s ease;
+      -ms-transition: stroke 0.4s ease;
+      -o-transition: stroke 0.4s ease; }
+    .about-arrows .about-arrows-down:hover svg g, .about-arrows .about-arrows-down:hover svg path, .about-arrows .about-arrows-down:hover svg rect, .about-arrows .about-arrows-down:hover svg line, .about-arrows .about-arrows-down:hover svg polyline {
+      stroke: #ff481b;
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/ }
+      @media only screen and (min-width: 0px) and (max-device-width: 767px) {
+        .about-arrows .about-arrows-down:hover svg g, .about-arrows .about-arrows-down:hover svg path, .about-arrows .about-arrows-down:hover svg rect, .about-arrows .about-arrows-down:hover svg line, .about-arrows .about-arrows-down:hover svg polyline {
+          stroke: #000000 !important; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: portrait) {
+        .about-arrows .about-arrows-down:hover svg g, .about-arrows .about-arrows-down:hover svg path, .about-arrows .about-arrows-down:hover svg rect, .about-arrows .about-arrows-down:hover svg line, .about-arrows .about-arrows-down:hover svg polyline {
+          stroke: #000000 !important; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
+        .about-arrows .about-arrows-down:hover svg g, .about-arrows .about-arrows-down:hover svg path, .about-arrows .about-arrows-down:hover svg rect, .about-arrows .about-arrows-down:hover svg line, .about-arrows .about-arrows-down:hover svg polyline {
+          stroke: #000000 !important; } }
     .about-arrows .about-arrows-down svg {
       width: 100%;
       height: 100%;
@@ -624,9 +678,9 @@ textarea {
 .collection-current {
   position: fixed;
   bottom: 20px;
-  width: 500px;
+  width: 70vw;
   left: 50%;
-  margin-left: -250px;
+  margin-left: -35vw;
   z-index: 10; }
   .collection-current .collection-current-season p {
     font-size: 35px;
@@ -655,6 +709,33 @@ textarea {
     /* Safari */
     transform-origin: 0 0;
     transform-origin: center; }
+    .collection-arrows .collection-arrows-up svg g, .collection-arrows .collection-arrows-up svg path, .collection-arrows .collection-arrows-up svg rect, .collection-arrows .collection-arrows-up svg line, .collection-arrows .collection-arrows-up svg polyline {
+      stroke: #000000;
+      transition: stroke 0.4s ease;
+      -webkit-transition: stroke 0.4s ease;
+      -moz-transition: stroke 0.4s ease;
+      -ms-transition: stroke 0.4s ease;
+      -o-transition: stroke 0.4s ease; }
+    .collection-arrows .collection-arrows-up:hover svg g, .collection-arrows .collection-arrows-up:hover svg path, .collection-arrows .collection-arrows-up:hover svg rect, .collection-arrows .collection-arrows-up:hover svg line, .collection-arrows .collection-arrows-up:hover svg polyline {
+      stroke: #ff481b;
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/ }
+      @media only screen and (min-width: 0px) and (max-device-width: 767px) {
+        .collection-arrows .collection-arrows-up:hover svg g, .collection-arrows .collection-arrows-up:hover svg path, .collection-arrows .collection-arrows-up:hover svg rect, .collection-arrows .collection-arrows-up:hover svg line, .collection-arrows .collection-arrows-up:hover svg polyline {
+          stroke: #000000 !important; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: portrait) {
+        .collection-arrows .collection-arrows-up:hover svg g, .collection-arrows .collection-arrows-up:hover svg path, .collection-arrows .collection-arrows-up:hover svg rect, .collection-arrows .collection-arrows-up:hover svg line, .collection-arrows .collection-arrows-up:hover svg polyline {
+          stroke: #000000 !important; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
+        .collection-arrows .collection-arrows-up:hover svg g, .collection-arrows .collection-arrows-up:hover svg path, .collection-arrows .collection-arrows-up:hover svg rect, .collection-arrows .collection-arrows-up:hover svg line, .collection-arrows .collection-arrows-up:hover svg polyline {
+          stroke: #000000 !important; } }
     .collection-arrows .collection-arrows-up svg {
       width: 100%;
       height: 100%;
@@ -663,6 +744,33 @@ textarea {
     display: block;
     width: 50px;
     height: 50px; }
+    .collection-arrows .collection-arrows-down svg g, .collection-arrows .collection-arrows-down svg path, .collection-arrows .collection-arrows-down svg rect, .collection-arrows .collection-arrows-down svg line, .collection-arrows .collection-arrows-down svg polyline {
+      stroke: #000000;
+      transition: stroke 0.4s ease;
+      -webkit-transition: stroke 0.4s ease;
+      -moz-transition: stroke 0.4s ease;
+      -ms-transition: stroke 0.4s ease;
+      -o-transition: stroke 0.4s ease; }
+    .collection-arrows .collection-arrows-down:hover svg g, .collection-arrows .collection-arrows-down:hover svg path, .collection-arrows .collection-arrows-down:hover svg rect, .collection-arrows .collection-arrows-down:hover svg line, .collection-arrows .collection-arrows-down:hover svg polyline {
+      stroke: #ff481b;
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/ }
+      @media only screen and (min-width: 0px) and (max-device-width: 767px) {
+        .collection-arrows .collection-arrows-down:hover svg g, .collection-arrows .collection-arrows-down:hover svg path, .collection-arrows .collection-arrows-down:hover svg rect, .collection-arrows .collection-arrows-down:hover svg line, .collection-arrows .collection-arrows-down:hover svg polyline {
+          stroke: #000000 !important; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: portrait) {
+        .collection-arrows .collection-arrows-down:hover svg g, .collection-arrows .collection-arrows-down:hover svg path, .collection-arrows .collection-arrows-down:hover svg rect, .collection-arrows .collection-arrows-down:hover svg line, .collection-arrows .collection-arrows-down:hover svg polyline {
+          stroke: #000000 !important; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
+        .collection-arrows .collection-arrows-down:hover svg g, .collection-arrows .collection-arrows-down:hover svg path, .collection-arrows .collection-arrows-down:hover svg rect, .collection-arrows .collection-arrows-down:hover svg line, .collection-arrows .collection-arrows-down:hover svg polyline {
+          stroke: #000000 !important; } }
     .collection-arrows .collection-arrows-down svg {
       width: 100%;
       height: 100%;

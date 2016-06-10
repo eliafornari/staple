@@ -95,7 +95,7 @@ $rootScope.About ={};
       $rootScope.previousAbout = function() {
             if($scope.aboutIndex>0){
                 $scope.aboutIndex = $scope.aboutIndex - 1;
-                $rootScope.mainAbout = $rootScope.About[$scope.mainIndex];
+                $rootScope.mainAbout = $rootScope.About[$scope.aboutIndex];
 
 
                 console.log($scope.aboutIndex);

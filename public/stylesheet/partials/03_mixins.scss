@@ -68,52 +68,62 @@ $break-desktop: 50000px;
 
   @if $type == 'fill' {
 
-    svg, g, path, rect, line{
-      fill: $color;
-      transition:         fill $transition-medium ease;
-      -webkit-transition: fill $transition-medium ease;
-      -moz-transition:    fill $transition-medium ease;
-      -ms-transition:     fill $transition-medium ease;
-      -o-transition:      fill $transition-medium ease;
+    svg{
+      g, path, rect, line, polyline{
+        fill: $color;
+        transition:         fill $transition-medium ease;
+        -webkit-transition: fill $transition-medium ease;
+        -moz-transition:    fill $transition-medium ease;
+        -ms-transition:     fill $transition-medium ease;
+        -o-transition:      fill $transition-medium ease;
+      }
+
 
     }
 
     &:hover {
-        svg, g, path, rect,line{
-          fill: $hover;
-          @include respond-to(phone-device) {
-              fill: $color !important;
+        svg{
+           g, path, rect,line, polyline{
+             fill: $hover;
+             @include respond-to(phone-device) {
+                 fill: $color !important;
+             }
+             @include respond-to(tablet-portrait-device) {
+                 fill: $color !important;
+             }
+             @include respond-to(tablet-landscape-device) {
+                 fill: $color !important;
+             }
           }
-          @include respond-to(tablet-portrait-device) {
-              fill: $color !important;
-          }
-          @include respond-to(tablet-landscape-device) {
-              fill: $color !important;
-          }
+
         }
     }
 
   } @else if $type == 'stroke' {
-      svg, g, path, rect, line{
-        stroke: $color;
-        transition:         stroke $transition-medium ease;
-        -webkit-transition: stroke $transition-medium ease;
-        -moz-transition:    stroke $transition-medium ease;
-        -ms-transition:     stroke $transition-medium ease;
-        -o-transition:      stroke $transition-medium ease;
+      svg{
+        g, path, rect, line, polyline{
+          stroke: $color;
+          transition:         stroke $transition-medium ease;
+          -webkit-transition: stroke $transition-medium ease;
+          -moz-transition:    stroke $transition-medium ease;
+          -ms-transition:     stroke $transition-medium ease;
+          -o-transition:      stroke $transition-medium ease;
+        }
       }
 
       &:hover {
-          svg, g, path, rect, line{
-            stroke: $hover;
-            @include respond-to(phone-device) {
-                stroke: $color !important;
-            }
-            @include respond-to(tablet-portrait-device) {
-                stroke: $color !important;
-            }
-            @include respond-to(tablet-landscape-device) {
-                stroke: $color !important;
+          svg{
+            g, path, rect, line, polyline{
+              stroke: $hover;
+              @include respond-to(phone-device) {
+                  stroke: $color !important;
+              }
+              @include respond-to(tablet-portrait-device) {
+                  stroke: $color !important;
+              }
+              @include respond-to(tablet-landscape-device) {
+                  stroke: $color !important;
+              }
             }
           }
       }
