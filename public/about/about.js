@@ -75,9 +75,7 @@ $rootScope.About ={};
         if($scope.aboutIndex<($rootScope.About.length-1)){
             $scope.aboutIndex = $scope.aboutIndex + 1;
             $rootScope.mainAbout = $rootScope.About[$scope.aboutIndex];
-            console.log("befo the bound");
-            console.log($scope.aboutIndex);
-            console.log($rootScope.About[$scope.aboutIndex].uid);
+
             anchorSmoothScroll.scrollTo('about-'+$rootScope.About[$scope.aboutIndex].uid);
         }
         else if($scope.aboutIndex>=0){
@@ -97,10 +95,6 @@ $rootScope.About ={};
                 $scope.aboutIndex = $scope.aboutIndex - 1;
                 $rootScope.mainAbout = $rootScope.About[$scope.aboutIndex];
 
-
-                console.log($scope.aboutIndex);
-                console.log($rootScope.About[$scope.aboutIndex].uid);
-                console.log("befo the bound");
                 anchorSmoothScroll.scrollTo('about-'+$rootScope.About[$scope.aboutIndex].uid);
             }
             else if($scope.aboutIndex<=0){
@@ -108,9 +102,6 @@ $rootScope.About ={};
               $rootScope.mainAbout = $rootScope.About[$scope.aboutIndex];
 
 
-              console.log($scope.aboutIndex);
-              console.log($rootScope.About[$scope.aboutIndex].uid);
-              console.log("over the bound");
               anchorSmoothScroll.scrollTo('about-'+$rootScope.About[$scope.aboutIndex].uid);
 
             }
@@ -132,9 +123,7 @@ setTimeout(function(){
 
     $(function() {
 
-       $(".about-section").mousewheel(function(event, delta) {
-
-          console.log(event.deltaX, event.deltaY, event.deltaFactor);
+       $(".about-section").bind("mousewheel",function(event, delta) {
 
           this.scrollLeft -= (delta * 0.4);
 
@@ -146,6 +135,10 @@ setTimeout(function(){
 
 
 }, 600);
+
+$scope.$on("$destroy", function() {
+    $(".about-section").unbind("mousewheel");
+});
 
 
 

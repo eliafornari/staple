@@ -11,7 +11,6 @@ $rootScope.isNavOpen = false;
   }
 
   $scope.isActive = function (viewLocation) {
-    $scope.navcolor =  "color: red";
     return viewLocation === $location.path();
   };
 

@@ -27,7 +27,7 @@
       <p class="stockist-main-text-p">{{mainStockist.data['stockist.country'].value}}</p>
     </div>
 
-    <iframe class="stockist-main-map" ng-src="{{mapFilter(mainStockist.data['stockist.location'].value.latitude , mainStockist.data['stockist.location'].value.longitude)}}"></iframe>
+    <iframe ng-hide="hideMap" class="stockist-main-map" ng-src="{{mapFilter(mainStockist.data['stockist.location'].value.latitude , mainStockist.data['stockist.location'].value.longitude)}}" ></iframe>
 <!-- ng-src="{{mapFilter(mainStockist.data['stockist.location'].value.latitude , mainStockist.data['stockist.location'].value.longitude)}}" -->
   </div>
 

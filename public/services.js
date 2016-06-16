@@ -187,4 +187,31 @@ Service.service('MetaInformation', function() {
 
 
 
+        this.scrollToZero = function() {
+
+          var number, element, scroll, scrollPosition, windowheight;
+
+
+            setTimeout(function(){
+
+
+                     scroll = 0
+
+                      // event.preventDefault();
+
+                      jQuery('html,body').stop().animate({
+                        scrollTop: scroll
+                      },700,
+                        'linear'
+                        // function() {
+                        //   // $location.path(section, false);
+                        //   // console.log($location.path());
+                        // }
+                      );
+                    }, 200);
+
+          }
+
+
+
      });

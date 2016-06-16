@@ -339,6 +339,10 @@ $transition-slow: 1s;
   font-family: $font-family-title;
   font-weight: bold;
   letter-spacing: 5px;
+  @include respond-to(phone){
+    font-size: $font-size-title-mobile;
+    line-height: $line-height-title-mobile;
+  }
 }
 @mixin subtitle(){
   font-size: $font-size-subtitle;

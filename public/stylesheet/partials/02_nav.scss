@@ -85,7 +85,7 @@
   height: auto;
   right:$margin-sides;
   top:$margin-sides;
-  z-index: $z-header;
+  z-index: $z-shop;
   @include hover-effect-background-color(transparent, $black);
   @include respond-to(phone){
     top:auto;

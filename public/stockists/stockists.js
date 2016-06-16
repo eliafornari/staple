@@ -13,15 +13,17 @@ Stockists.filter('mapsFilter', function ($sce) {
       console.log(newUrl);
 
         var trusted = $sce.trustAsResourceUrl(newUrl);
+
         return trusted;
+
     };
   })
 
 
 
-Stockists.controller('stockistsCtrl', function($scope, $location, $rootScope, $routeParams, $timeout,	$http){
+Stockists.controller('stockistsCtrl', function($scope, $location, $rootScope, $routeParams, $timeout,	$http, anchorSmoothScroll){
 
-
+  $scope.hideMap = true;
   $rootScope.pageLoading = true;
   $rootScope.Stockist = [];
   $scope.mainStockist;
@@ -30,8 +32,11 @@ Stockists.controller('stockistsCtrl', function($scope, $location, $rootScope, $r
   setTimeout(function(){
     $rootScope.viewLoaded = true;
     $rootScope.pageLoading = false;
+    $scope.hideMap = false;
     $scope.$apply();
-  }, 500);
+
+
+  }, 600);
 
 
 
@@ -100,9 +105,15 @@ $scope.thisStockist = function(uid){
 
     for (i in  $rootScope.Stockist){
 
-      if (uid == $rootScope.Stockist[i].uid)
+      if (uid == $rootScope.Stockist[i].uid){
         $scope.mainStockist = $rootScope.Stockist[i];
           console.log(uid);
+      }
+
+      if($rootScope.isMobileDevice){
+        anchorSmoothScroll.scrollToZero();
+      }
+
     }
 }
 

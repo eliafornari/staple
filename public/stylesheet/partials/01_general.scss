@@ -45,7 +45,7 @@
 
 
 
-*{
+main{
   -webkit-overflow-scrolling: touch;
 }
 
@@ -162,7 +162,11 @@ cursor: pointer;
 
 
 
-
+.collectionMobileOverflow{
+  overflow: hidden;
+  height:100vh;
+  display: block;
+}
 
 /*.............................Loader............................*/
 

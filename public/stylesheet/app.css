@@ -100,7 +100,7 @@
   height: auto;
   right: 20px;
   top: 20px;
-  z-index: 13;
+  z-index: 11;
   background-color: transparent;
   transition: background-color 0.4s ease;
   -webkit-transition: background-color 0.4s ease;
@@ -182,12 +182,19 @@
       font-family: helvetica;
       font-weight: bold;
       letter-spacing: 5px;
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/
       color: #000000;
       transition: color 0.4s ease;
       -webkit-transition: color 0.4s ease;
       -moz-transition: color 0.4s ease;
       -ms-transition: color 0.4s ease;
       -o-transition: color 0.4s ease; }
+      @media only screen and (min-width: 0px) and (max-width: 767px) {
+        .nav-content .nav-ul .nav-li a p {
+          font-size: 30px;
+          line-height: 55px; } }
       .nav-content .nav-ul .nav-li a p:hover {
         color: #ff481b;
         /*  @if $media == large-desktop {
@@ -320,7 +327,7 @@
 ::-webkit-scrollbar {
   display: none; }
 
-* {
+main {
   -webkit-overflow-scrolling: touch; }
 
 html {
@@ -381,6 +388,11 @@ table {
 [x-ng-click] {
   cursor: pointer; }
 
+.collectionMobileOverflow {
+  overflow: hidden;
+  height: 100vh;
+  display: block; }
+
 /*.............................Loader............................*/
 .page-loader-div {
   display: block;
@@ -435,8 +447,8 @@ table {
     white-space: nowrap; }
     .about-list .about-section .about-section-entry {
       display: inline-block;
-      width: 500px;
-      height: auto;
+      width: auto;
+      height: 300px;
       margin-left: 20px; }
       .about-list .about-section .about-section-entry .about-section-entry-image {
         width: 500px;
@@ -445,11 +457,20 @@ table {
         background-size: cover;
         background-position: center; }
       .about-list .about-section .about-section-entry .about-section-entry-text {
-        width: 500px;
-        height: auto;
+        width: auto;
+        height: 300px;
+        max-width: 70vw;
         font-size: 12px;
         line-height: 22px;
-        font-family: helvetica; }
+        font-family: helvetica;
+        /*  @if $media == large-desktop {
+            @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+          }*/ }
+        @media only screen and (min-width: 0px) and (max-width: 767px) {
+          .about-list .about-section .about-section-entry .about-section-entry-text {
+            width: 90vw;
+            max-width: 70vw;
+            overflow: scroll; } }
         .about-list .about-section .about-section-entry .about-section-entry-text span {
           display: block;
           white-space: normal; }
@@ -460,19 +481,41 @@ table {
   width: 70vw;
   left: 50%;
   margin-left: -35vw;
-  z-index: 10; }
+  z-index: 10;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .about-current {
+      bottom: initial;
+      top: 20px;
+      width: 90vw;
+      margin-left: -45vw; } }
   .about-current .about-current-season p {
     font-size: 35px;
     line-height: 70px;
     font-family: helvetica;
     font-weight: bold;
     letter-spacing: 5px;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/
     text-align: center; }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .about-current .about-current-season p {
+        font-size: 30px;
+        line-height: 55px; } }
 
 .about-arrows {
   position: fixed;
   right: 20px;
-  bottom: 20px; }
+  bottom: 20px;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .about-arrows {
+      right: 85px; } }
   .about-arrows .about-arrows-up {
     display: block;
     width: 50px;
@@ -487,7 +530,10 @@ table {
     -moz-transform: rotate(180deg);
     /* Safari */
     transform-origin: 0 0;
-    transform-origin: center; }
+    transform-origin: center;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/ }
     .about-arrows .about-arrows-up svg g, .about-arrows .about-arrows-up svg path, .about-arrows .about-arrows-up svg rect, .about-arrows .about-arrows-up svg line, .about-arrows .about-arrows-up svg polyline {
       stroke: #000000;
       transition: stroke 0.4s ease;
@@ -515,6 +561,10 @@ table {
       @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
         .about-arrows .about-arrows-up:hover svg g, .about-arrows .about-arrows-up:hover svg path, .about-arrows .about-arrows-up:hover svg rect, .about-arrows .about-arrows-up:hover svg line, .about-arrows .about-arrows-up:hover svg polyline {
           stroke: #000000 !important; } }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .about-arrows .about-arrows-up {
+        width: 28px;
+        height: 28px; } }
     .about-arrows .about-arrows-up svg {
       width: 100%;
       height: 100%;
@@ -522,7 +572,10 @@ table {
   .about-arrows .about-arrows-down {
     display: block;
     width: 50px;
-    height: 50px; }
+    height: 50px;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/ }
     .about-arrows .about-arrows-down svg g, .about-arrows .about-arrows-down svg path, .about-arrows .about-arrows-down svg rect, .about-arrows .about-arrows-down svg line, .about-arrows .about-arrows-down svg polyline {
       stroke: #000000;
       transition: stroke 0.4s ease;
@@ -550,6 +603,10 @@ table {
       @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
         .about-arrows .about-arrows-down:hover svg g, .about-arrows .about-arrows-down:hover svg path, .about-arrows .about-arrows-down:hover svg rect, .about-arrows .about-arrows-down:hover svg line, .about-arrows .about-arrows-down:hover svg polyline {
           stroke: #000000 !important; } }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .about-arrows .about-arrows-down {
+        width: 28px;
+        height: 28px; } }
     .about-arrows .about-arrows-down svg {
       width: 100%;
       height: 100%;
@@ -562,9 +619,21 @@ table {
 .contact-content {
   width: 600px;
   height: auto;
-  margin: auto; }
+  margin: auto;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .contact-content {
+      width: 100vw; } }
   .contact-content .contact-form {
-    width: 600px; }
+    width: 600px;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/ }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .contact-content .contact-form {
+        width: 100vw; } }
 
 .form-entry input {
   font-size: 35px;
@@ -572,7 +641,20 @@ table {
   font-family: helvetica;
   font-weight: bold;
   letter-spacing: 5px;
-  text-align: center; }
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/
+  text-align: center;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .form-entry input {
+      font-size: 30px;
+      line-height: 55px; } }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .form-entry input {
+      width: 100vw; } }
 
 .form-message {
   height: 100px; }
@@ -582,8 +664,21 @@ table {
     font-family: helvetica;
     font-weight: bold;
     letter-spacing: 5px;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/
     text-align: center;
-    height: 100px; }
+    height: 100px;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/ }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .form-message .form-message-input {
+        font-size: 30px;
+        line-height: 55px; } }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .form-message .form-message-input {
+        width: 100vw; } }
 
 .form-button {
   position: relative;
@@ -595,6 +690,9 @@ table {
   font-family: helvetica;
   font-weight: bold;
   letter-spacing: 5px;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/
   text-align: center;
   height: 100px;
   border: 0;
@@ -605,7 +703,14 @@ table {
   -webkit-transition: color 0.4s ease;
   -moz-transition: color 0.4s ease;
   -ms-transition: color 0.4s ease;
-  -o-transition: color 0.4s ease; }
+  -o-transition: color 0.4s ease;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .form-button {
+      font-size: 30px;
+      line-height: 55px; } }
   .form-button:hover {
     color: #ff481b;
     /*  @if $media == large-desktop {
@@ -626,12 +731,23 @@ table {
     @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
       .form-button:hover {
         color: #000000 !important; } }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .form-button {
+      width: 100vw;
+      left: 0;
+      margin: 0; } }
 
 input, textarea {
   width: 600px;
   outline: 0;
   border: 0;
-  color: #000000; }
+  color: #000000;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    input, textarea {
+      width: 100vw; } }
   input:focus, textarea:focus {
     outline: 0; }
 
@@ -681,19 +797,41 @@ textarea {
   width: 70vw;
   left: 50%;
   margin-left: -35vw;
-  z-index: 10; }
+  z-index: 10;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .collection-current {
+      bottom: initial;
+      top: 20px;
+      width: 90vw;
+      margin-left: -45vw; } }
   .collection-current .collection-current-season p {
     font-size: 35px;
     line-height: 70px;
     font-family: helvetica;
     font-weight: bold;
     letter-spacing: 5px;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/
     text-align: center; }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .collection-current .collection-current-season p {
+        font-size: 30px;
+        line-height: 55px; } }
 
 .collection-arrows {
   position: fixed;
   right: 20px;
-  bottom: 20px; }
+  bottom: 20px;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .collection-arrows {
+      right: 85px; } }
   .collection-arrows .collection-arrows-up {
     display: block;
     width: 50px;
@@ -708,7 +846,10 @@ textarea {
     -moz-transform: rotate(180deg);
     /* Safari */
     transform-origin: 0 0;
-    transform-origin: center; }
+    transform-origin: center;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/ }
     .collection-arrows .collection-arrows-up svg g, .collection-arrows .collection-arrows-up svg path, .collection-arrows .collection-arrows-up svg rect, .collection-arrows .collection-arrows-up svg line, .collection-arrows .collection-arrows-up svg polyline {
       stroke: #000000;
       transition: stroke 0.4s ease;
@@ -736,6 +877,10 @@ textarea {
       @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
         .collection-arrows .collection-arrows-up:hover svg g, .collection-arrows .collection-arrows-up:hover svg path, .collection-arrows .collection-arrows-up:hover svg rect, .collection-arrows .collection-arrows-up:hover svg line, .collection-arrows .collection-arrows-up:hover svg polyline {
           stroke: #000000 !important; } }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .collection-arrows .collection-arrows-up {
+        width: 28px;
+        height: 28px; } }
     .collection-arrows .collection-arrows-up svg {
       width: 100%;
       height: 100%;
@@ -743,7 +888,10 @@ textarea {
   .collection-arrows .collection-arrows-down {
     display: block;
     width: 50px;
-    height: 50px; }
+    height: 50px;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/ }
     .collection-arrows .collection-arrows-down svg g, .collection-arrows .collection-arrows-down svg path, .collection-arrows .collection-arrows-down svg rect, .collection-arrows .collection-arrows-down svg line, .collection-arrows .collection-arrows-down svg polyline {
       stroke: #000000;
       transition: stroke 0.4s ease;
@@ -771,6 +919,10 @@ textarea {
       @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
         .collection-arrows .collection-arrows-down:hover svg g, .collection-arrows .collection-arrows-down:hover svg path, .collection-arrows .collection-arrows-down:hover svg rect, .collection-arrows .collection-arrows-down:hover svg line, .collection-arrows .collection-arrows-down:hover svg polyline {
           stroke: #000000 !important; } }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .collection-arrows .collection-arrows-down {
+        width: 28px;
+        height: 28px; } }
     .collection-arrows .collection-arrows-down svg {
       width: 100%;
       height: 100%;
@@ -778,7 +930,13 @@ textarea {
 
 .committee {
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .committee {
+      height: calc(100vh - 70px); } }
 
 .committee-content {
   width: 600px;
@@ -794,27 +952,61 @@ textarea {
   left: 0%;
   z-index: 10;
   color: white;
-  mix-blend-mode: difference; }
+  mix-blend-mode: difference;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .form-navigation {
+      bottom: 100px;
+      mix-blend-mode: normal; } }
   .form-navigation .form-navigation-buttons {
     margin: auto;
     width: 400px;
     text-align: center;
     color: white;
-    mix-blend-mode: difference; }
+    mix-blend-mode: difference;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/ }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .form-navigation .form-navigation-buttons {
+        mix-blend-mode: normal; } }
     .form-navigation .form-navigation-buttons span {
       font-size: 35px;
       line-height: 70px;
       font-family: helvetica;
       font-weight: bold;
       letter-spacing: 5px;
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/
       color: #000000;
       transition: color 0.4s ease;
       -webkit-transition: color 0.4s ease;
       -moz-transition: color 0.4s ease;
       -ms-transition: color 0.4s ease;
       -o-transition: color 0.4s ease;
+      color: white;
       mix-blend-mode: difference;
-      color: white; }
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/
+      -webkit-touch-callout: none;
+      /* iOS Safari */
+      -webkit-user-select: none;
+      /* Chrome/Safari/Opera */
+      -khtml-user-select: none;
+      /* Konqueror */
+      -moz-user-select: none;
+      /* Firefox */
+      -ms-user-select: none;
+      /* Internet Explorer/Edge */
+      user-select: none; }
+      @media only screen and (min-width: 0px) and (max-width: 767px) {
+        .form-navigation .form-navigation-buttons span {
+          font-size: 30px;
+          line-height: 55px; } }
       .form-navigation .form-navigation-buttons span:hover {
         color: #ff481b;
         /*  @if $media == large-desktop {
@@ -835,13 +1027,27 @@ textarea {
         @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
           .form-navigation .form-navigation-buttons span:hover {
             color: #000000 !important; } }
+      .form-navigation .form-navigation-buttons span:hover {
+        mix-blend-mode: normal; }
+      @media only screen and (min-width: 0px) and (max-width: 767px) {
+        .form-navigation .form-navigation-buttons span {
+          mix-blend-mode: normal;
+          color: #000000; } }
 
 .committee-progress {
   width: 100vw;
   height: 100px;
   position: fixed;
   bottom: 0;
-  left: 0; }
+  left: 0;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .committee-progress {
+      bottom: initial;
+      top: 0;
+      height: 50px; } }
   .committee-progress .committee-percentage {
     position: absolute;
     left: 20px;
@@ -851,16 +1057,36 @@ textarea {
     font-family: helvetica;
     font-weight: bold;
     letter-spacing: 5px;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/
     line-height: 100px;
     color: #FFFFFF;
     height: 100px;
-    z-index: 7; }
+    z-index: 7;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/ }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .committee-progress .committee-percentage {
+        font-size: 30px;
+        line-height: 55px; } }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .committee-progress .committee-percentage {
+        height: 50px;
+        line-height: 50px; } }
   .committee-progress .committee-progress-bar {
     height: 100px;
     position: absolute;
     background-color: #000000;
     top: 0;
-    left: 0; }
+    left: 0;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/ }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .committee-progress .committee-progress-bar {
+        height: 50px; } }
 
 .selected {
   color: #ff481b; }
@@ -882,7 +1108,14 @@ textarea {
   left: 50%;
   bottom: 20px;
   width: 200px;
-  margin-left: -100px; }
+  margin-left: -100px;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .social-link {
+      bottom: initial;
+      top: 20px; } }
   .social-link a {
     font-size: 20px;
     line-height: 30px;
@@ -922,17 +1155,38 @@ textarea {
   display: table;
   width: auto;
   height: 600px;
-  white-space: nowrap; }
+  white-space: nowrap;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .social-instagram-ul {
+      height: 400px;
+      width: auto; } }
   .social-instagram-ul .social-instagram-li {
     display: inline-block;
     height: 600px;
-    width: 600px; }
+    width: auto;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/ }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .social-instagram-ul .social-instagram-li {
+        height: 400px;
+        width: auto; } }
     .social-instagram-ul .social-instagram-li .social-loading {
       width: 100%;
       height: 600px;
       margin: auto;
       display: block;
-      position: relative; }
+      position: relative;
+      /*  @if $media == large-desktop {
+          @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+        }*/ }
+      @media only screen and (min-width: 0px) and (max-width: 767px) {
+        .social-instagram-ul .social-instagram-li .social-loading {
+          height: 400px;
+          width: auto; } }
       .social-instagram-ul .social-instagram-li .social-loading p {
         width: 100%;
         text-align: center;
@@ -964,11 +1218,30 @@ textarea {
   height: 100vh;
   right: 0;
   top: 0;
-  border-left: 10px solid #000000; }
+  border-left: 10px solid #000000;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .stockist-list {
+      position: absolute;
+      width: 100vw;
+      height: 50vh;
+      left: 0;
+      top: 50%;
+      border-left: none;
+      border-top: 10px solid #000000; } }
   .stockist-list .stockist-list-filter {
-    width: 50vw;
+    width: calc(50vw - 10px);
     margin: auto;
-    margin-top: 100px; }
+    margin-top: 100px;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/ }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .stockist-list .stockist-list-filter {
+        margin-top: 0px;
+        width: 100vw; } }
     .stockist-list .stockist-list-filter a {
       width: 50%;
       display: block;
@@ -982,7 +1255,18 @@ textarea {
     display: table;
     position: relative;
     left: 2.5vw;
-    top: 2.5vw; }
+    top: 2.5vw;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/ }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .stockist-list .stockist-list-ul {
+        width: 100vw;
+        height: auto;
+        display: table;
+        position: relative;
+        left: 0vw;
+        top: 25px; } }
     .stockist-list .stockist-list-ul .stockist-list-li {
       width: 100%;
       text-align: center;
@@ -1005,11 +1289,31 @@ textarea {
   width: 50vw;
   height: 100vh;
   left: 0;
-  top: 0; }
+  top: 0;
+  /*  @if $media == large-desktop {
+      @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+    }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .stockist-main {
+      position: absolute;
+      width: 100vw;
+      height: 50vh;
+      left: 0;
+      top: 0; } }
   .stockist-main .stockist-main-text {
     position: relative;
     left: 20px;
-    margin-top: 200px; }
+    margin-top: 200px;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/ }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .stockist-main .stockist-main-text {
+        position: relative;
+        left: 20px;
+        top: 20px;
+        width: 90vw;
+        margin: 0; } }
     .stockist-main .stockist-main-text .stockist-main-text-name {
       position: relative;
       font-size: 20px;
@@ -1026,6 +1330,13 @@ textarea {
     position: absolute;
     width: 50vw;
     height: 50vh;
-    bottom: 0; }
+    bottom: 0;
+    /*  @if $media == large-desktop {
+        @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+      }*/ }
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+      .stockist-main .stockist-main-map {
+        width: 100vw;
+        height: 20vh; } }
 
 /*# sourceMappingURL=app.css.map */

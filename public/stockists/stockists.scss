@@ -13,11 +13,24 @@
   right:0;
   top:0;
   border-left: 10px solid #000000;
+  @include respond-to(phone){
+    position: absolute;
+    width: 100vw;
+    height: 50vh;
+    left: 0;
+    top: 50%;
+    border-left: none;
+    border-top: 10px solid #000000;
+  }
 
   .stockist-list-filter{
-    width: 50vw;
+    width: calc(50vw - 10px);
     margin: auto;
     margin-top:100px;
+    @include respond-to(phone){
+      margin-top: 0px;
+      width: 100vw;
+    }
     a{
       width: 50%;
       display: block;
@@ -35,6 +48,14 @@
     position: relative;
     left:2.5vw;
     top:2.5vw;
+    @include respond-to(phone){
+      width: 100vw;
+      height: auto;
+      display: table;
+      position: relative;
+      left: 0vw;
+      top: 25px;
+    }
     .stockist-list-li{
       width: 100%;
       text-align: center;
@@ -67,10 +88,24 @@
   height:100vh;
   left:0;
   top:0;
+  @include respond-to(phone){
+    position: absolute;
+    width: 100vw;
+    height: 50vh;
+    left: 0;
+    top: 0;
+  }
   .stockist-main-text{
     position: relative;
     left:$margin-sides;
     margin-top:200px;
+    @include respond-to(phone){
+      position: relative;
+      left: $margin-sides;
+      top: $margin-sides;
+      width: 90vw;
+      margin: 0;
+    }
     .stockist-main-text-name{
       position: relative;
       @include subtitle();
@@ -86,6 +121,10 @@
     width:50vw;
     height:50vh;
     bottom:0;
+    @include respond-to(phone){
+      width:100vw;
+      height:20vh;
+    }
 
   }
 }

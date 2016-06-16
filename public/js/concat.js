@@ -1085,6 +1085,33 @@ Service.service('MetaInformation', function() {
 
 
 
+        this.scrollToZero = function() {
+
+          var number, element, scroll, scrollPosition, windowheight;
+
+
+            setTimeout(function(){
+
+
+                     scroll = 0
+
+                      // event.preventDefault();
+
+                      jQuery('html,body').stop().animate({
+                        scrollTop: scroll
+                      },700,
+                        'linear'
+                        // function() {
+                        //   // $location.path(section, false);
+                        //   // console.log($location.path());
+                        // }
+                      );
+                    }, 200);
+
+          }
+
+
+
      });
 
 
@@ -1100,7 +1127,6 @@ $rootScope.isNavOpen = false;
   }
 
   $scope.isActive = function (viewLocation) {
-    $scope.navcolor =  "color: red";
     return viewLocation === $location.path();
   };
 
@@ -1349,12 +1375,10 @@ $rootScope.nextCollection = function(x) {
   if($scope.mainIndex<($rootScope.Collection.length-1)){
       $scope.mainIndex = $scope.mainIndex + 1;
       $rootScope.mainCollection = $rootScope.Collection[$scope.mainIndex];
-      console.log("befo the bound");
   }
   else if($scope.mainIndex>=0){
     $scope.mainIndex = 0;
     $rootScope.mainCollection = $rootScope.Collection[$scope.mainIndex];
-    console.log("over the bound");
   }
   anchorSmoothScroll.scrollTo('collection-'+$rootScope.Collection[$scope.mainIndex].uid);
   // var g;
@@ -1416,9 +1440,6 @@ $rootScope.previousCollection = function() {
 
 
 
-
-
-
 var scroll,windowheight;
 
 windowheight = window.innerHeight;
@@ -1426,69 +1447,29 @@ windowheight = window.innerHeight;
 setTimeout(function(){
 
 
-// $scope.collectionPositions=[];
-//
-//   for (i in $rootScope.Collection){
-//     var artistPosition =  jQuery('#collection-'+$rootScope.Collection[i].uid).offset().top;
-//     artistPosition = windowheight*i;
-//     var object = {
-//                     "index": i,
-//                     "name": $rootScope.Collection[i].uid,
-//                     "offset":artistPosition
-//                   }
-//
-//     $scope.collectionPositions = $scope.collectionPositions.concat(object);
-//   }
+  $(function() {
 
-$(function() {
+     $(".collection-season").bind("mousewheel", function(event, delta) {
 
-   $(".collection-season").mousewheel(function(event, delta) {
+        // console.log(event.deltaX, event.deltaY, event.deltaFactor);
 
-      console.log(event.deltaX, event.deltaY, event.deltaFactor);
+        this.scrollLeft -= (delta * 0.4);
 
-      this.scrollLeft -= (delta * 0.4);
+        event.preventDefault();
 
-      event.preventDefault();
+     });
 
-   });
+  });
 
-});
-
-
-    // jQuery('.collection').bind("scroll.collection", function(event) {
-    //
-    //     scroll = jQuery('.collection').scrollTop();
-
-
-        // $('.collection-season').scrollLeft(scroll);
-
-
-      //   for (i in $scope.collectionPositions){
-       //
-      //     if((scroll > ($scope.collectionPositions[i].offset - 1)) && (scroll < ($scope.collectionPositions[i].offset + windowheight -1 ))){
-      //       $rootScope.mainCollection=$rootScope.Collection[i];
-      //       $scope.mainIndex=i;
-      //       console.log($scope.mainIndex);
-      //       console.log($rootScope.mainCollection.uid);
-      //       $scope.$apply();
-       //
-       //
-      //     }else{
-      //     }
-      //  }//for loop
-
-    //     $scope.$apply();
-    //
-    // });//scroll bind
-
-
-    // $scope.$on('destroy', function(){
-    //   jQuery(window).unbind("scroll.collection");
-    // });
 
 
 
 }, 1500);
+
+
+$scope.$on("$destroy", function() {
+    $(".collection-season").unbind("mousewheel");
+});
 
 
 });//end od controller
@@ -1628,15 +1609,17 @@ Stockists.filter('mapsFilter', function ($sce) {
       console.log(newUrl);
 
         var trusted = $sce.trustAsResourceUrl(newUrl);
+
         return trusted;
+
     };
   })
 
 
 
-Stockists.controller('stockistsCtrl', function($scope, $location, $rootScope, $routeParams, $timeout,	$http){
+Stockists.controller('stockistsCtrl', function($scope, $location, $rootScope, $routeParams, $timeout,	$http, anchorSmoothScroll){
 
-
+  $scope.hideMap = true;
   $rootScope.pageLoading = true;
   $rootScope.Stockist = [];
   $scope.mainStockist;
@@ -1645,8 +1628,11 @@ Stockists.controller('stockistsCtrl', function($scope, $location, $rootScope, $r
   setTimeout(function(){
     $rootScope.viewLoaded = true;
     $rootScope.pageLoading = false;
+    $scope.hideMap = false;
     $scope.$apply();
-  }, 500);
+
+
+  }, 600);
 
 
 
@@ -1715,9 +1701,15 @@ $scope.thisStockist = function(uid){
 
     for (i in  $rootScope.Stockist){
 
-      if (uid == $rootScope.Stockist[i].uid)
+      if (uid == $rootScope.Stockist[i].uid){
         $scope.mainStockist = $rootScope.Stockist[i];
           console.log(uid);
+      }
+
+      if($rootScope.isMobileDevice){
+        anchorSmoothScroll.scrollToZero();
+      }
+
     }
 }
 
@@ -1950,9 +1942,7 @@ $rootScope.About ={};
         if($scope.aboutIndex<($rootScope.About.length-1)){
             $scope.aboutIndex = $scope.aboutIndex + 1;
             $rootScope.mainAbout = $rootScope.About[$scope.aboutIndex];
-            console.log("befo the bound");
-            console.log($scope.aboutIndex);
-            console.log($rootScope.About[$scope.aboutIndex].uid);
+
             anchorSmoothScroll.scrollTo('about-'+$rootScope.About[$scope.aboutIndex].uid);
         }
         else if($scope.aboutIndex>=0){
@@ -1972,10 +1962,6 @@ $rootScope.About ={};
                 $scope.aboutIndex = $scope.aboutIndex - 1;
                 $rootScope.mainAbout = $rootScope.About[$scope.aboutIndex];
 
-
-                console.log($scope.aboutIndex);
-                console.log($rootScope.About[$scope.aboutIndex].uid);
-                console.log("befo the bound");
                 anchorSmoothScroll.scrollTo('about-'+$rootScope.About[$scope.aboutIndex].uid);
             }
             else if($scope.aboutIndex<=0){
@@ -1983,9 +1969,6 @@ $rootScope.About ={};
               $rootScope.mainAbout = $rootScope.About[$scope.aboutIndex];
 
 
-              console.log($scope.aboutIndex);
-              console.log($rootScope.About[$scope.aboutIndex].uid);
-              console.log("over the bound");
               anchorSmoothScroll.scrollTo('about-'+$rootScope.About[$scope.aboutIndex].uid);
 
             }
@@ -2007,9 +1990,7 @@ setTimeout(function(){
 
     $(function() {
 
-       $(".about-section").mousewheel(function(event, delta) {
-
-          console.log(event.deltaX, event.deltaY, event.deltaFactor);
+       $(".about-section").bind("mousewheel",function(event, delta) {
 
           this.scrollLeft -= (delta * 0.4);
 
@@ -2021,6 +2002,10 @@ setTimeout(function(){
 
 
 }, 600);
+
+$scope.$on("$destroy", function() {
+    $(".about-section").unbind("mousewheel");
+});
 
 
 

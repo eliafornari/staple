@@ -17,9 +17,11 @@
   left:50%;
   bottom:$margin-sides;
   width: 200px;
-
   margin-left:-100px;
-
+  @include respond-to(phone){
+    bottom:initial;
+    top:$margin-sides;
+  }
   a{
     @include subtitle();
     text-align: center;
@@ -35,16 +37,28 @@
   width: auto;
   height:600px;
   white-space:nowrap;
+  @include respond-to(phone){
+    height: 400px;
+    width: auto;
+  }
   .social-instagram-li{
     display: inline-block;
     height: 600px;
-    width: 600px;
+    width: auto;
+    @include respond-to(phone){
+      height: 400px;
+      width: auto;
+    }
     .social-loading{
       width:100%;
       height: 600px;
       margin: auto;
       display: block;
       position: relative;
+      @include respond-to(phone){
+        height: 400px;
+        width: auto;
+      }
       p{
         width:100%;
         text-align: center;
